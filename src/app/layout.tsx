@@ -80,7 +80,6 @@ const BackGroundgray = styled.div`
     background-color: #F2F2F2;
     border: 1px solid black;
     border-radius: 30px;
-    padding: 10px 0 10px 0;
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;

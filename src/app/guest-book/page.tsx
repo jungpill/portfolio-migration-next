@@ -28,7 +28,7 @@ const Page = () => {
         GuestBookImage5,
         GuestBookImage4
     ]
-    
+
     const warnAlert = useAlertStore((p) => p.showWarn)
     const successAlert = useAlertStore((p) => p.showSuccess)
 
@@ -101,18 +101,32 @@ export default Page;
 
 const GuestBookContainer = styled(motion.div)`
     display: flex;
-    width: 90%;
+    width: 95%;
     height: 90%;
     background-color: white;
     border: 2px solid skyblue;
     border-radius: 20px;
     padding: 0.5rem;
     align-items: center;
-    
     flex-direction: column;
     margin-left: 1%;
     padding-bottom: .8rem;
-    position: relative;
+    overflow-y: scroll;
+    
+    &::-webkit-scrollbar {
+    width: 0px;
+    }
+
+    opacity: 0;
+    transform: translateX(40px);
+    animation: pageIn 0.5s ease forwards;
+
+    @keyframes pageIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 `
 
 const GuestWrapper = styled.div`

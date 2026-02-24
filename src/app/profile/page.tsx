@@ -88,7 +88,7 @@ export default Page
 
 const ProfileContainer = styled.div`
     display: flex;
-    width: 90%;
+    width: 95%;
     height: 90%;
     background-color: white;
     border: 2px solid skyblue;

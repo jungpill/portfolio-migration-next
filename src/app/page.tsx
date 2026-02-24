@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import test from "../assets/webp/미니홈피.webp";
 
-const HOME = () => {
+const Page = () => {
 
     const text = "유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.";
 
@@ -33,11 +33,11 @@ const HOME = () => {
     )
 }
 
-export default HOME
+export default Page
 
 const BodyContainer = styled.div`
     display: flex;
-    width: 90%;
+    width: 95%;
     height: 90%;
     background-color: white;
     border: 2px solid skyblue;
