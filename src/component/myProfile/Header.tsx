@@ -64,7 +64,6 @@ const HeaderWrapper = styled.div`
     flex-direction: row;
     justify-content: center; 
     align-items: center;
-    margin-top: -5px;
 `
 
 const TodayVisitorCount = styled.p`
@@ -73,7 +72,7 @@ const TodayVisitorCount = styled.p`
     font-weight: 600;
     line-height: 1.5rem;
     font-size: 0.8rem;
-    margin: 10px 0 0 0;
+    margin: 0;
 `
 
 const VisitorSpan = styled.span`

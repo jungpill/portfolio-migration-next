@@ -33,7 +33,7 @@ const MyProfileContainer = styled.div`
 const Wrapper = styled.div`
     display: flex;
     width: 90%;
-    height: 100%;
+    height: 95%;
     background-color: white;
     border-radius: 25px;
     padding: 10px;
