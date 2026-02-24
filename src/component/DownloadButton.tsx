@@ -9,11 +9,9 @@ const DownloadButton = () => {
 
     return(
     <Container>
-    <SubmitButton>
+    <SubmitButton href ='pdf/이정필 포트폴리오.pdf' download>
     <ArrowIcon  />
-        <a href ='pdf/이정필 포트폴리오.pdf' download>
             포트폴리오 다운로드
-        </a>
     </SubmitButton>
     </Container>)
 }
@@ -35,10 +33,13 @@ const Container = styled.div`
     z-index: 1002;
 `;
 
-const SubmitButton = styled.button`
+const SubmitButton = styled.a`
   background-color: #1c1e2a; // 짙은 남색/검정 배경
   font-weight: 500;
-  padding: 12px 24px;
+  padding: 12px;
+  width: 7.5rem;
+  height: 20px;
+  font-size: 0.7rem;
   border: none;
   border-radius: 10px; // 완전한 pill 형태
   display: flex;
@@ -46,6 +47,7 @@ const SubmitButton = styled.button`
   gap: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
+  color: #fff; // 기본 텍스트 색상 (흰색)
 
   a{
    color: #fff;

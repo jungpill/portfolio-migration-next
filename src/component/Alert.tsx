@@ -1,3 +1,5 @@
+"use client";
+
 import {useEffect} from 'react';
 import styled from 'styled-components';
 import {useAlertStore, type AlertType} from '../store/useAlertStore';

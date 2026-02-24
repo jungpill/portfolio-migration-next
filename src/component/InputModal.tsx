@@ -113,7 +113,7 @@ const OkButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   width: 78px;
-  box-sizing: border--box;
+  box-sizing: border-box;
 `;
 
 const CancelButton = styled.button`

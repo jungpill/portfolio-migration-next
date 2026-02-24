@@ -11,24 +11,24 @@ const Tab = () => {
 
     return(
         <TabContainer>
-            <Link href="/">
-                <Item $isActive={pathName === '/'}>홈</Item>
-            </Link>
-            <Link href="/profile">
-                <Item $isActive={pathName === '/profile'}>프로필</Item>
-            </Link>
+            <Item $isActive={pathName === '/'}>
+                <Link href="/">홈</Link>
+            </Item>
+            <Item $isActive={pathName === '/profile'}>
+                <Link href="/profile">프로필</Link>
+            </Item>
 
-            <Link href="/cover-letter">
-                <Item $isActive={pathName === '/cover-letter'}>자소서</Item>
-            </Link>
+            <Item $isActive={pathName === '/cover-letter'}>
+                <Link href="/cover-letter">자소서</Link>
+            </Item>
 
-            <Link href="/project">
-                <Item $isActive={pathName === '/project'}>프로젝트</Item>
-            </Link>
+            <Item $isActive={pathName === '/project'}>
+                <Link href="/project">프로젝트</Link>
+            </Item>
 
-            <Link href="/guest-book">
-                <Item $isActive={pathName === '/guest-book'}>방명록</Item>
-            </Link>
+            <Item $isActive={pathName === '/guest-book'}>
+                <Link href="/guest-book">방명록</Link>
+            </Item>
         </TabContainer>
     )
 }
@@ -41,16 +41,11 @@ const TabContainer = styled.ul`
     flex-direction: column;
     width: 4.5rem;
     min-height: 250px;
-    right: -1%;
+    right: -2.5%;
     top: 20%;
     list-style: none;
     padding: 0;
     margin: 0;
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
 
     @media(max-width: ${sizes.laptop}){
     right: 3%;
@@ -58,9 +53,6 @@ const TabContainer = styled.ul`
 `
 
 const Item = styled.li<{$isActive: boolean}>`
-    display: flex;
-    align-items: center;
-    justify-content: center;
     
     background-color: ${props => props.$isActive ? 'white' : '#468baf'};
     color: ${props => props.$isActive ? '#468baf' : 'white'};
@@ -72,6 +64,16 @@ const Item = styled.li<{$isActive: boolean}>`
     cursor: pointer;
 
     &:hover{
-    background-color: skyblue;
+        background-color: skyblue;
     }
+    
+    a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: inherit;
+  }
 `

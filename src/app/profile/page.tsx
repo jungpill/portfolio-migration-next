@@ -1,5 +1,3 @@
-"use client";
-
 import styled from "styled-components";
 import JavaScript from '../../assets/webp/JavaSCript.webp'
 import TypeScript from '../../assets/webp/TypeScript.webp'
@@ -22,7 +20,7 @@ const Page = () => {
 
     const techList = [
         { title: "React", icon: React },
-        {title: "Next.js", icon: Next},
+        { title: "Next.js", icon: Next},
         { title: "JavaScript", icon: JavaScript },
         { title: "TypeScript", icon: TypeScript },
         { title: "Redux", icon: Redux },

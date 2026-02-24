@@ -67,8 +67,8 @@ const Page = () => {
             <GuestWrapper>
                 {guestBookData ? guestBookData.map((GuestBook,index) => {
                     return(
-                        <>
-                        <Header key = {index}>
+                    <div key = {GuestBook.id} style = {{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
+                        <Header>
                         <MarginSpan>NO.{GuestBook.id}</MarginSpan> 
                         <MarginSpan>{GuestBook.userId}</MarginSpan> 
                         ({dayjs(GuestBook.date).format('YYYY.MM.DD HH:mm')}) 
@@ -87,7 +87,7 @@ const Page = () => {
                             <ProfileImage src = {image[index % 5].src} alt = '이미지 로드중'/>
                             <Text>{GuestBook.content}</Text>
                         </RowWrapper>
-                </>
+                    </div>
                     )
                 }) : '아직 등록된 방명록이 없습니다.'}
             </GuestWrapper>

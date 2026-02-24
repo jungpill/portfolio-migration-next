@@ -18,7 +18,7 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             <MusicBar/>
             <ContentContainer>
             <DottedLine>
-                <MyProfile/>
+            <MyProfile/>
                 
             </DottedLine>
                 <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '20%', width: '3rem', height: '3.7rem'}}/>

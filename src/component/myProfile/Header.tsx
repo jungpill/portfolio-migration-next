@@ -2,8 +2,8 @@
 
 import styled from "styled-components";
 import {useState, useEffect} from 'react'
-import { axiosInstance } from "../../../../JungPillPortFolio/src/api/axios";
-import { useGuestBookStore } from "../../../../JungPillPortFolio/src/store/useGuestBookStore";
+import { axiosInstance } from "../../api/axios";
+import { useGuestBookStore } from "../../store/useGuestBookStore";
 
 const MyProfileHeader = () => {
 
