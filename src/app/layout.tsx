@@ -21,10 +21,10 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             <MyProfile/>
                 
             </DottedLine>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '20%', width: '3rem', height: '3.7rem'}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '25%', width: '3rem', height: '3.7rem'}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '70%', width: '3rem', height: '3.7rem'}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '75%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '20%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '25%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '70%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '75%', width: '3rem', height: '3.7rem'}}/>
             
                 <BackGroundgray>
                     {children}
@@ -60,6 +60,7 @@ const ContentContainer = styled.div`
     position: relative;
     border: 2px dashed white;
     border-radius: 20px;
+    
     align-items: center;
     justify-content: center;
     padding: 20px;

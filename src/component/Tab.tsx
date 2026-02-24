@@ -1,7 +1,6 @@
 "use client";
 
 import styled from "styled-components";
-import { sizes } from "../styles/BreakPoints";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -41,15 +40,11 @@ const TabContainer = styled.ul`
     flex-direction: column;
     width: 4.5rem;
     min-height: 250px;
-    right: -2.5%;
     top: 20%;
     list-style: none;
     padding: 0;
     margin: 0;
-
-    @media(max-width: ${sizes.laptop}){
-    right: 3%;
-    }
+    right: -3%;
 `
 
 const Item = styled.li<{$isActive: boolean}>`

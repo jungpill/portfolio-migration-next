@@ -49,15 +49,10 @@ const SubmitButton = styled.a`
   transition: background-color 0.2s;
   color: #fff; // 기본 텍스트 색상 (흰색)
 
-  a{
-   color: #fff;
-   }
 
   &:hover {
     background-color: #f0f0f0;
-    a {
-      color: #000;
-    }
+    color: #000;
   }
 
   &:active {
