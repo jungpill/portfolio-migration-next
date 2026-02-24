@@ -1,61 +1,41 @@
-"use client"
-
 import styled from 'styled-components'
-import { motion } from "framer-motion";
 import test from "../assets/webp/미니홈피.webp";
+
 const HOME = () => {
 
     const text = "유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.";
 
-    const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.05 }, // 0.1초 간격으로 하나씩 등장
-    },
-    };
-
-    const letterVariants = {
-    hidden: { opacity: 0, y: 10 }, // 처음에는 아래에 있고 투명함
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }, // 부드럽게 올라오면서 나타남
-    };
-
     return(
-        <BodyContainer
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -20 }}
-        transition={{ duration: 0.5 }}
-        >
-            <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            >
-            {text.split("").map((char, index) => (
-                <motion.span key={index} variants={letterVariants} style ={{fontSize: '1.45rem', fontWeight: '700',}} >
-                {char}
-                </motion.span>
-            ))}
-            </motion.div>
+        <BodyContainer>
+            <TextContainer aria-label={text}>
+                {Array.from(text).map((char, index) => (
+                    <Letter
+                        key={index}
+                        style={{
+                            ['--d' as any]: `${index * 50}ms`, // 한 글자씩 딜레이
+                            fontSize: '1.45rem',
+                            fontWeight: '700',
+                        }}
+                    >
+                        {char === " " ? "\u00A0" : char}
+                    </Letter>
+                ))}
+            </TextContainer>
+
             <Img src={test.src}/>
-            
-            <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{ duration: 1 }}
-            >
+
+            <BalloonWrap>
                 <Balloon>
                   할 수 있다 화이팅!!
                 </Balloon>
-            </motion.div>
+            </BalloonWrap>
         </BodyContainer>
     )
 }
 
 export default HOME
 
-const BodyContainer = styled(motion.div)`
+const BodyContainer = styled.div`
     display: flex;
     width: 90%;
     height: 90%;
@@ -69,12 +49,54 @@ const BodyContainer = styled(motion.div)`
     margin-left: 1%;
     padding-bottom: .8rem;
     position: relative;
+
+    /* 페이지 전체 등장(기존 BodyContainer motion 효과 대체) */
+    opacity: 0;
+    transform: translateX(40px);
+    animation: pageIn 0.5s ease forwards;
+
+    @keyframes pageIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+`
+
+const TextContainer = styled.div`
+    display: inline-block;
+`
+
+const Letter = styled.span`
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(5px);
+    animation: letterIn 0.5s ease forwards;
+    animation-delay: var(--d);
+
+    @keyframes letterIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 `
 
 const Img = styled.img`
     width: 90%;
     height: 75%;
     margin-top: 2%; 
+`
+
+const BalloonWrap = styled.div`
+    opacity: 0;
+    animation: balloonIn 1s ease forwards;
+
+    @keyframes balloonIn {
+        to {
+            opacity: 1;
+        }
+    }
 `
 
 const Balloon = styled.div`
@@ -103,7 +125,7 @@ const Balloon = styled.div`
     content: '';
     position: absolute;
     top: 100%;
-    left: 20px; /* 왼쪽에 꼬리 붙이기 */
+    left: 20px;
     width: 0;
     height: 0;
     border: 10px solid transparent;
