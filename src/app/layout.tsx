@@ -6,6 +6,7 @@ import MusicBar from "../component/MusicBar";
 import DownloadButton from "../component/DownloadButton";
 import Image from "next/image";
 import StyledComponentsRegistry from "@/utils/StyledComponentsRegistry";
+import MyProfile from "@/component/myProfile/MyProfile";
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
@@ -17,17 +18,19 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             <MusicBar/>
             <ContentContainer>
             <DottedLine>
+                <MyProfile/>
+                
             </DottedLine>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '29.2%', top: '20%', width: '3rem', height: '3.7rem'}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '29.2%', top: '25%', width: '3rem', height: '3.7rem'}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '29.2%', top: '70%', width: '3rem', height: '3.7rem'}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '29.2%', top: '75%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '20%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '25%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '70%', width: '3rem', height: '3.7rem'}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.8%', top: '75%', width: '3rem', height: '3.7rem'}}/>
             
                 <BackGroundgray>
                     {children}
                 </BackGroundgray>
             
-            <Tab/>
+                <Tab/>
             </ContentContainer>
         </LayoutContainer>
         </StyledComponentsRegistry>
@@ -90,9 +93,8 @@ const DottedLine = styled.div`
     align-items: center;
     border: 1px solid black;
     border-radius: 30px;
-    width: 25%;
+    width: 30%;
     height: 98%;
     padding: 0.75rem;
     background-color: #F2F2F2;
-    flex-direction: column;
 `

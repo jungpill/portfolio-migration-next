@@ -21,7 +21,7 @@ const DownloadButton = () => {
 export default DownloadButton;
 
 const Container = styled.div`
-     position: absolute;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,6 +32,7 @@ const Container = styled.div`
     right: 0;
     top: 0;
     font-size: 8px;
+    z-index: 1002;
 `;
 
 const SubmitButton = styled.button`

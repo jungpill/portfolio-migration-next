@@ -131,6 +131,7 @@ const MusicBarContainer = styled(motion.div)`
   top: 10%;
   font-size: 10px;
   border-radius: 4px;
+  z-index: 1002;
 
   @media (max-width: ${sizes.laptop}) {
     right: 0;
