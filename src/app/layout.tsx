@@ -46,7 +46,7 @@ const LayoutContainer = styled.div`
     display: flex;
     position: relative;
     height: 100dvh;
-    width: 100%;
+    width: 100vw;
     background-image: linear-gradient(white 1px, transparent 1px), 
                     linear-gradient(90deg, white 1px, transparent 1px);
     background-size: 20px 20px;

@@ -1,5 +1,7 @@
-import React,{ useEffect, useRef } from "react";
-import useProjectTypeStore from "../zustand/UseProjectTypeStore";
+"use client"
+
+import React,{ useEffect } from "react";
+import useProjectTypeStore from "../store/UseProjectTypeStore";
 
 interface useOutsideClickProps <T extends HTMLElement> {
     readonly callBack?: () => void;
@@ -9,7 +11,6 @@ interface useOutsideClickProps <T extends HTMLElement> {
 const useOutsideClick = <T extends HTMLElement>({callBack, ref}: useOutsideClickProps<T>) => {
 
     const {setProjectType} = useProjectTypeStore();
-    const hasMounted = useRef(false);
 
     useEffect(() => {
         

@@ -1,9 +1,10 @@
 "use client"
 
-import React,{ useRef,useEffect} from "react";
+import React,{ useRef} from "react";
 import styled from "styled-components";
 import useOutsideClick from "../hook/UseOutSideClick";
 import close from '../../src/assets/webp/close.webp'
+import "../app/globals.css"
 
 type ModalProps = {
   children: React.ReactNode | null;
@@ -19,12 +20,6 @@ const Modal = ({
 
     const ref = useRef<HTMLDivElement>(null);
     useOutsideClick({ref:ref})
-
-    useEffect(() => {
-        const image = close
-        const img = new Image()
-        img.src = image.src
-    },[])
 
     return(
         <ModalContainer visible={children !== null} onClick={() => setModalChildren(null)}>
@@ -48,7 +43,7 @@ const Modal = ({
 export default Modal;
 
 const ModalContainer = styled.div<{visible: boolean}>`
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     display: flex;
     background-color: rgba(0, 10, 10, .4);
