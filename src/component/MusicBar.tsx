@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -5,7 +7,7 @@ import stop from "../assets/webp/stop.webp";
 import square from "../assets/webp/square.webp";
 import next from '../assets/webp/next.webp'
 import play from '../assets/webp/play.webp'
-import { bgmMap, tracks } from "../assets/music";
+import { tracks } from "../assets/music/index";
 import WarnModal from "./WarnModal";
 import { sizes } from "../styles/BreakPoints";
 
@@ -94,19 +96,19 @@ const MusicBar = () => {
       <IconBox onClick={handleRemote}>
         <Icon
           data-type={!active ? "play" : "stop"}
-          src={!active ? play : stop}
+          src={(!active ? play : stop).src}
           alt="재생/정지"
         />
-        <Icon data-type="square" src={square} alt="처음으로" />
+        <Icon data-type="square" src={square.src} alt="처음으로" />
 
         {/* ▼ 여기 수정: 왼쪽(이전) 버튼은 back, 오른쪽(다음) 버튼은 next */}
         <Icon
           data-type="back"
-          src={next}
+          src={next.src}
           style={{ transform: "rotate(180deg)" }}
           alt="이전"
         />
-        <Icon data-type="next" src={next} alt="다음" />
+        <Icon data-type="next" src={next.src} alt="다음" />
       </IconBox>
 
       <audio ref={audioRef} src={current.src} onEnded={goNext} />

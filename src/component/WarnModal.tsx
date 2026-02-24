@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "styled-components";
 
 interface Props {
@@ -8,8 +10,8 @@ interface Props {
 
 const WarnModal = ({ visible, close, confirm }: Props) => {
   return (
-    <ModalContainer visible={visible} onClick={() => close()}>
-      <ModalWrapper visible={visible} onClick={(e) => e.stopPropagation()}>
+    <ModalContainer $visible={visible} onClick={() => close()}>
+      <ModalWrapper onClick={(e) => e.stopPropagation()}>
         <Title>확인 버튼 클릭시 노래가 재생됩니다!</Title>
         <Des>볼륨을 확인해주세요!</Des>
 
@@ -24,7 +26,7 @@ const WarnModal = ({ visible, close, confirm }: Props) => {
 
 export default WarnModal;
 
-const ModalContainer = styled.div<{visible: boolean}>`
+const ModalContainer = styled.div<{$visible: boolean}>`
     position: fixed;
     z-index: 1000;
     display: flex;
@@ -36,13 +38,13 @@ const ModalContainer = styled.div<{visible: boolean}>`
     justify-content: center;
     align-items: center;
 
-    pointer-events: ${props => props.visible  ? 'auto' : 'none'};
+    pointer-events: ${props => props.$visible  ? 'auto' : 'none'};
 
-    opacity: ${props => props.visible ? 1 : 0};
+    opacity: ${props => props.$visible ? 1 : 0};
     transition: opacity 0.5s ease;
 `
 
-const ModalWrapper = styled.div<{visible: boolean}>`    
+const ModalWrapper = styled.div`    
     display: flex;
     flex-direction: column;
     justify-content: center;

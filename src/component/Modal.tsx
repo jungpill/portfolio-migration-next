@@ -1,3 +1,5 @@
+"use client"
+
 import React,{ useRef,useEffect} from "react";
 import styled from "styled-components";
 import useOutsideClick from "../hook/UseOutSideClick";
@@ -21,14 +23,14 @@ const Modal = ({
     useEffect(() => {
         const image = close
         const img = new Image()
-        img.src = image
+        img.src = image.src
     },[])
 
     return(
         <ModalContainer visible={children !== null} onClick={() => setModalChildren(null)}>
             <ModalWrapper ref = {ref} onClick={(e) => e.stopPropagation()} visible={children !== null}>
                 <img 
-                src = {close} 
+                src = {close.src} 
                 width='30px' 
                 height='30px' 
                 style={{ 

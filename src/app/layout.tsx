@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
+        <html lang="kr">
         <LayoutContainer>
             <DownloadButton/>
             <MusicBar/>
@@ -23,6 +24,7 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             <Tab/>
             </ContentContainer>
         </LayoutContainer>
+        </html>
     )
 }
 
@@ -53,7 +55,7 @@ const ContentContainer = styled.div`
     background-color: skyblue;
 `
 
-const BackGroundgray = styled.div`
+const BackGroundgray = styled.body`
     display: flex;
     justify-content: center;
     align-items: center;

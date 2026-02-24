@@ -1,3 +1,5 @@
+"use client"
+
 import styled from "styled-components";
 import { FaArrowDown } from 'react-icons/fa';
 
@@ -18,7 +20,7 @@ const DownloadButton = () => {
 
 export default DownloadButton;
 
-const Container = styled.button`
+const Container = styled.div`
      position: absolute;
     display: flex;
     align-items: center;
