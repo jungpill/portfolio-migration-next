@@ -1,4 +1,6 @@
-import React, { useState, useRef, useEffect , RefObject} from "react";
+"use client";
+
+import React, { useState} from "react";
 import styled from "styled-components";
 
 interface CancelOrderModalProps {
