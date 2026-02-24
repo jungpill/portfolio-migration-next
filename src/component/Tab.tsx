@@ -1,27 +1,34 @@
-"use client"
+"use client";
 
 import styled from "styled-components";
-import useTabStore from "../store/UseTypeStore";
 import { sizes } from "../styles/BreakPoints";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Tab = () => {
-    
-    const {type, setType} = useTabStore()
 
-    const handleTypeChange = (event: React.MouseEvent<HTMLUListElement>) => {
-        const target = (event.target as HTMLElement).closest("li");
-        if (!target) return;
+    const pathName = usePathname();
 
-        setType(target.getAttribute("data-type") as "Home" | "Profile" | 'CoverLetter' | 'Project' | 'GuestBook')
-    }
-    
     return(
-        <TabContainer onClick = {handleTypeChange}>
-           <Item data-type="Home" $isActive={'Home' === type ? true : false}>홈</Item>
-           <Item data-type="Profile" $isActive={'Profile' === type ? true : false}>프로필</Item>
-           <Item data-type="CoverLetter" $isActive={'CoverLetter' === type ? true : false}>자소서</Item>
-           <Item data-type="Project" $isActive={'Project' === type ? true : false}>프로젝트</Item>
-           <Item data-type="GuestBook" $isActive={'GuestBook' === type ? true : false}>방명록</Item>
+        <TabContainer>
+            <Link href="/">
+                <Item data-type="" $isActive={pathName === '/'}>홈</Item>
+            </Link>
+            <Link href="/profile">
+                <Item data-type="Profile" $isActive={pathName === '/profile'}>프로필</Item>
+            </Link>
+
+            <Link href="/cover-letter">
+                <Item data-type="CoverLetter" $isActive={pathName === '/cover-letter'}>자소서</Item>
+            </Link>
+
+            <Link href="/project">
+                <Item data-type="Project" $isActive={pathName === '/project'}>프로젝트</Item>
+            </Link>
+
+            <Link href="/guest-book">
+                <Item data-type="GuestBook" $isActive={pathName === '/guest-book'}>방명록</Item>
+            </Link>
         </TabContainer>
     )
 }
