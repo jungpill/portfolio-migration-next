@@ -44,6 +44,7 @@ const SubmitButton = styled.a`
   border-radius: 10px; // 완전한 pill 형태
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
