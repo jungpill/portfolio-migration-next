@@ -10,9 +10,9 @@ const Tab = () => {
 
     return(
         <TabContainer>
-            <Item $isActive={pathname === '/'}>
-  <Link href="/">홈</Link>
-</Item>
+            <Link href="/">
+                <Item $isActive={pathname === '/'}>홈</Item>
+            </Link>
             <Link href="/profile">
                 <Item data-type="Profile" $isActive={'/profile' === pathname}>프로필</Item>
             </Link>
@@ -40,11 +40,17 @@ const TabContainer = styled.ul`
     flex-direction: column;
     width: 4.5rem;
     min-height: 250px;
-    right: -3%;
+    right: 0;
     top: 20%;
+    transform: translateX(70%);
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
     @media(max-width: ${sizes.laptop}){
-    right: 3%;
+    transform: translateX(0);
+    right: 0.5rem;
     }
 `
 

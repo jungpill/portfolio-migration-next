@@ -80,11 +80,15 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
                 <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '70%', width: '3rem', height: '3.7rem'}}/>
                 <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '75%', width: '3rem', height: '3.7rem'}}/>
             
-                <BackGroundgray>
-                    {children}
-                </BackGroundgray>
+                <RightPanelArea>
+                    <BackGroundgray>
+                        <ScrollArea>
+                            {children}
+                        </ScrollArea>
+                    </BackGroundgray>
+                    <Tab/>
+                </RightPanelArea>
             
-                <Tab/>
             </ContentContainer>
         </LayoutContainer>
         </StyledComponentsRegistry>
@@ -125,20 +129,36 @@ const ContentContainer = styled.div`
 `
 
 const BackGroundgray = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #F2F2F2;
+    border: 1px solid black;
+    overflow: hidden;
+`
+
+const RightPanelArea = styled.div`
+    display: flex;
+    position: relative;
+    height: 98%;
+    width: 70%;
+`
+
+const ScrollArea = styled.div`
     display: flex;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    height: 98%;
-    width: 70%;
-    border-radius: 5px;
-    background-color: #F2F2F2;
-    border: 1px solid black;
-    border-radius: 30px;
+    height: 100%;
+    width: 100%;
     flex-direction: column;
     overflow-y: auto;
-    overflow-x: hidden;
     padding: 0.75rem;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
 `
 
 const DottedLine = styled.div`
