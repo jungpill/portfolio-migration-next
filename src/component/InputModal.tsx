@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState} from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import styled from "styled-components";
 
 interface CancelOrderModalProps {
@@ -18,13 +19,21 @@ const InputModal = ({
   ) => {
 
   const [password, setPassword] = useState('')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    return () => setMounted(false)
+  }, [])
 
   const handleClose = () => {
     setPassword('')
     setIsOpen(false)
   }
  
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
         <ModalContainer visible={visible} onClick={handleClose}>
             <ModalBox onClick={(e) => e.stopPropagation()}>
             <TitleWrapper>
@@ -41,7 +50,7 @@ const InputModal = ({
             </ButtonGroup>
             </ModalBox>
         </ModalContainer>
-  );
+  , document.body);
 };
 
 export default InputModal;

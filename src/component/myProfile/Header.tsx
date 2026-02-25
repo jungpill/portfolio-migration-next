@@ -8,6 +8,7 @@ import { useGuestBookStore } from "../../store/useGuestBookStore";
 const MyProfileHeader = () => {
 
     const setGuestBookData = useGuestBookStore((p) => p.setGuestBookData)
+    const setGuestBookLoaded = useGuestBookStore((p) => p.setGuestBookLoaded)
 
     const [visitor, setVisitor] = useState({
         today: '',
@@ -29,6 +30,8 @@ const MyProfileHeader = () => {
             setGuestBookData(response.data)
         }catch(err){
             console.error(err)
+        }finally{
+            setGuestBookLoaded(true)
         }
     }
 
@@ -49,7 +52,7 @@ const MyProfileHeader = () => {
     return(
         <HeaderWrapper>
             <TodayVisitorCount>
-                <Visitor>Today..</Visitor> {visitor.today} <Visitor>| Total..</Visitor> {visitor.total}
+                <Visitor>Today..</Visitor> <p>{visitor.today}</p> <Visitor>| Total..</Visitor> <p>{visitor.total}</p>
             </TodayVisitorCount>
         </HeaderWrapper>
     )

@@ -14,16 +14,20 @@ type GuestBookUpdater =
 
 interface GuestBookStore {
     guestBookData: GuestBookProps[];
+    guestBookLoaded: boolean;
     setGuestBookData: (updater: GuestBookUpdater) => void;
+    setGuestBookLoaded: (loaded: boolean) => void;
   }
 
 export const useGuestBookStore = create<GuestBookStore>((set) => ({
     guestBookData: [],
+    guestBookLoaded: false,
     setGuestBookData: (updater) =>
     set((state) => ({
       guestBookData:
         typeof updater === "function" ? updater(state.guestBookData) : updater,
     })),
+    setGuestBookLoaded: (loaded) => set({ guestBookLoaded: loaded }),
 }))
 
 
