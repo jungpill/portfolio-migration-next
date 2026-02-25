@@ -9,9 +9,9 @@ const DownloadButton = () => {
 
     return(
     <Container>
-    <SubmitButton href ='pdf/이정필 포트폴리오.pdf' download>
+    <SubmitButton href ='pdf/이정필 이력서.pdf' download>
     <ArrowIcon  />
-            포트폴리오 다운로드
+          이력서 다운로드
     </SubmitButton>
     </Container>)
 }
