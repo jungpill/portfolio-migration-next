@@ -16,9 +16,8 @@ import { sizes } from "../../styles/BreakPoints";
 import React from "react";
 
 const Page = () => {
-
     const [modalChildren, setModalChildren] = useState<React.ReactNode | null>(null)
-    
+
     return(
         <ProjectContainer>
         <Modal

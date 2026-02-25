@@ -49,7 +49,7 @@ const MyProfileHeader = () => {
     return(
         <HeaderWrapper>
             <TodayVisitorCount>
-                <VisitorSpan>Today..</VisitorSpan> {visitor.today} <VisitorSpan>| Total..</VisitorSpan> {visitor.total}
+                <Visitor>Today..</Visitor> {visitor.today} <Visitor>| Total..</Visitor> {visitor.total}
             </TodayVisitorCount>
         </HeaderWrapper>
     )
@@ -66,7 +66,7 @@ const HeaderWrapper = styled.div`
     align-items: center;
 `
 
-const TodayVisitorCount = styled.p`
+const TodayVisitorCount = styled.span`
     display: flex;
     color: red;
     font-weight: 600;
@@ -75,7 +75,7 @@ const TodayVisitorCount = styled.p`
     margin: 0;
 `
 
-const VisitorSpan = styled.span`
+const Visitor = styled.p`
     color: black;
     margin-right: 5px;
     margin-left: 5px;

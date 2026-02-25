@@ -27,6 +27,12 @@ export const metadata: Metadata = {
         title: "프로필 | 이정필 포트폴리오",
         description: "기술 스택, 경력, 교육 이력",
         url: "/profile",
+        images: [{
+            url: "/favicon.ico",
+            width: 1200,
+            height: 630,
+            alt: "프로필 | 이정필 포트폴리오"
+        }]
     },
 }
 
@@ -51,45 +57,51 @@ const Page = () => {
     ];
 
     return(
-        <ProfileContainer>
+        <ProfileContainer aria-labelledby="profile-title">
             <ProfileWrapper>
-                <Title>
-                    기술 스택 및 도구
-                </Title>
-                
-                <Content>
-                    {techList.map((tech) => (
-                        <div key={tech.title} >
-                        <CustomTooltip
-                            title={tech.title}
-                            position="bottom"
-                            children={<Icon src={tech.icon.src} alt={tech.title} />}
-                        />
-                        </div>
-                    ))}
-                </Content>
-                
-                <Title>
-                    경력
-                </Title>
-                <Content style = {{display: 'flex', flexDirection: 'column'}} >
-                <Text>(주) 투비유니콘</Text><br/>
-                프론트엔드 개발 <br/>
-                2025.06 ~ 재직중
-                </Content>
 
-                <Title>
-                    교육
-                </Title>
-                <Content style = {{display: 'flex', flexDirection: 'column'}} >
-                <Text>성결대학교</Text><br/>
-                졸업 | 대학교(학사) <br/>
-                컴퓨터공학과 2023. 03. ~ 2025. 02
-                </Content><br/>
-                <Content style = {{display: 'flex', flexDirection: 'column'}} >
-                   <Text> ICT 한이음 멘토링</Text><br/>
-                    정부사업 한이음을 통해 약 8개월간 SW 기업전문가(멘토)와 팀을 이루어 프로젝트를 수행(24.03 ~ 24.11) 
-                </Content>
+                {/* 접근성 향상을 위해 시각적으로 숨긴 제목 추가 */}
+                <h1 id="profile-title" style={{position:'absolute', left:'-9999px'}}>
+                    프로필
+                </h1>
+                {/* 기술 스택 및 도구 */}
+                <section aria-labelledby="tech-title">
+                    <Title as="h2" id="tech-title">기술 스택 및 도구</Title>
+                    
+                        <ul style={{display: 'flex', flexWrap: 'wrap',  padding: 0, margin: 0, listStyle: 'none'}}> 
+                            {techList.map((tech) => (
+                            <li key={tech.title} style={{margin: 0, padding: 0, listStyle: 'none'}}>
+                            <CustomTooltip
+                                title={tech.title}
+                                position="bottom"
+                                children={<Icon src={tech.icon.src} alt={tech.title} />}
+                            />
+                            </li>
+                        ))}
+                        </ul>
+                    
+                </section>
+
+                {/* 경력 */}
+                <section aria-labelledby="career-title">
+                    <Title as="h3" id="career-title">경력</Title>
+                    <div>
+                        <Text as="h4">(주) 투비유니콘</Text>
+                        <p>프론트엔드 개발</p>
+                        <time dateTime="2025-06">2025.06</time> ~ 재직중
+                    </div>
+                </section>
+                
+                {/* 교육 */}
+                <section aria-labelledby="education-title">
+                    <Title as="h3" id="education-title">교육</Title>
+                    <div>
+                        <Text as="h4">성결대학교</Text>
+                        <p>졸업 | 대학교(학사)</p>
+                        <p>컴퓨터공학과 2023. 03. ~ 2025. 02</p>
+                    </div>
+                </section>
+
             </ProfileWrapper>
         </ProfileContainer>
     )
@@ -98,7 +110,7 @@ const Page = () => {
 export default Page
 
 
-const ProfileContainer = styled.div`
+const ProfileContainer = styled.article`
     display: flex;
     width: 95%;
     height: 90%;
@@ -136,7 +148,7 @@ const ProfileWrapper = styled.div`
     height: 100%;
 `
 
-const Title = styled.div`
+const Title = styled.h3`
     font-weight: 600;
     line-height: 2rem;
     font-size: 1.2rem;
@@ -147,17 +159,6 @@ const Title = styled.div`
 const Text = styled.p`
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: -1.5rem;
-`
-
-const Content = styled.div`
-    display: flex;
-    width: 90%;
-    margin-left: 2%;
-    line-height: 2rem;
-    flex-wrap: wrap;
-    white-space: pre-line;
-
 `
 
 const Icon = styled.img`

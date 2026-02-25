@@ -73,7 +73,7 @@ const TextContainer = styled.div`
     display: inline-block;
 `
 
-const Letter = styled.span`
+const Letter = styled.h2`
     display: inline-block;
     opacity: 0;
     transform: translateY(5px);
@@ -105,7 +105,7 @@ const BalloonWrap = styled.div`
     }
 `
 
-const Balloon = styled.div`
+const Balloon = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
