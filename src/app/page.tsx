@@ -73,7 +73,7 @@ const TextContainer = styled.div`
     display: inline-block;
 `
 
-const Letter = styled.h2`
+const Letter = styled.h1`
     display: inline-block;
     opacity: 0;
     transform: translateY(5px);

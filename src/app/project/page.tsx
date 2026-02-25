@@ -19,47 +19,77 @@ const Page = () => {
     const [modalChildren, setModalChildren] = useState<React.ReactNode | null>(null)
 
     return(
-        <ProjectContainer>
+        <ProjectContainer aria-labelledby="project-title">
+
+            {/* 접근성 향상을 위한 숨겨진 제목 */}
+            <h1 id="project-title" style={{position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden'}}>
+                프로젝트 목록
+            </h1>
         <Modal
         setModalChildren={setModalChildren}
         >
             {modalChildren}
         </Modal>
+
             <ProjectWrapper>
                 <Content>
-                    <Card onClick = {() => {setModalChildren(<Jaychis/>)}}>
+                    <Card 
+                    onClick = {() => {setModalChildren(<Jaychis/>)}} 
+                    aria-labelledby="jaychis-title"
+                    aria-describedby="jaychis-period jaychis-desc"
+                    aria-haspopup="dialog"
+                    aria-controls="project-modal"
+                    >
                         <ImageCard
                         img={JaychisImg.src}
                         />
-                        <Title>Jaychis</Title>
+                        <Title id="jaychis-title">Jaychis</Title>
                         <Text>2024.09 ~ 2025.01</Text>
                         <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
                     </Card>
 
-                    <Card onClick = {() => {setModalChildren(<Cut/>)}}>
+                    <Card 
+                    onClick = {() => {setModalChildren(<Cut/>)}} 
+                    aria-labelledby="cut-title" 
+                    aria-describedby="cut-period cut-desc" 
+                    aria-haspopup="dialog" 
+                    aria-controls="project-modal"
+                    >
                         <ImageCard
                         img={싹둑싹둑Img.src}
                         />
-                        <Title>싹둑싹둑</Title>
+                        <Title id="cut-title">싹둑싹둑</Title>
                         <Text>2024.02 ~ 2024.06</Text>
                         <Text>판매자와 디자이너의 매칭을 통해 의류 구매 및 리폼을 동시에 진행 가능한 웹 플랫폼
                         </Text>
                     </Card>
 
-                    <Card onClick = {() => {setModalChildren(<Poisoning/>)}}>
+                    <Card 
+                    onClick = {() => {setModalChildren(<Poisoning/>)}} 
+                    aria-labelledby="poisoning-title"
+                    aria-describedby="poisoning-period poisoning-desc"
+                    aria-haspopup="dialog"
+                    aria-controls="project-modal"
+                    >
                         <ImageCard
                         img={중독.src}
                         />
-                        <Title>중독</Title>
+                        <Title id="poisoning-title">중독</Title>
                         <Text>2025.06 ~ 진행중</Text>
                         <Text>중독 개선을 돕는 앱 금연뿐 아니라 다양한 중독 문제를 돕는 서비스로 확장할 예정</Text>
                     </Card>
 
-                    <Card onClick = {() => {setModalChildren(<PortFolio/>)}}>
+                    <Card 
+                    onClick = {() => {setModalChildren(<PortFolio/>)}} 
+                    aria-labelledby="portfolio-title"
+                    aria-describedby="portfolio-period portfolio-desc"
+                    aria-haspopup="dialog"
+                    aria-controls="project-modal"
+                    >
                         <ImageCard
                         img={PortFolilImg.src}
                         />
-                        <Title>싸이월드 포트폴리오</Title>
+                        <Title id="portfolio-title">싸이월드 포트폴리오</Title>
                         <Text>2025.04 ~ 2025.04</Text>
                         <Text>포트폴리오를 웹으로 구현 </Text>
                     </Card>
@@ -124,35 +154,46 @@ const Content = styled.div`
     }
 `
 
-const Card = styled.div`
-    display: flex;
-    padding: 1rem;
-    flex-direction: column;
-    width: 90%;
-    cursor: pointer;
-    border-radius: 8px;
+const Card = styled.button`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #fff;
+  border: none;
 
-    @media(max-width: ${sizes.laptop}){
+  /* 핵심 */
+  align-items: flex-start;   /* 자식 요소 왼쪽 정렬 */
+  text-align: left;          /* 버튼 내부 텍스트 줄바꿈도 왼쪽 정렬 */
+  
+  /* 버튼 기본 스타일 제거(브라우저마다 다름) */
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  @media (max-width: ${sizes.laptop}) {
     width: 30%;
     margin-right: 100px;
-    }
+  }
+`;
 
-    &:hover{
-    background-color: #f0f0f0;
-    }
-`
-
-const Title = styled.div`
+const Title = styled.h2`
     font-weight: 600;
     line-height: 2rem;
     font-size: 1rem;
     margin-top: 1%;
     margin-left: 1%;
+    margin-bottom: 0;
 `
 
-const Text = styled.div`
+const Text = styled.p`
     font-weight: 400;
     line-height: 1.2rem;
     font-size: 0.7rem;
-    margin-left: 1%;
+    margin: 0;
 `
