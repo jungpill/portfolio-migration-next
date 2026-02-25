@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 import test from "../assets/webp/미니홈피.webp";
 
+export const metadata = {
+    title: '이정필 포트폴리오',
+    description: '싸이월드를 오마주해 만든 포트폴리오 입니다.',
+    keywords: ['web developer', 'frontend developer', 'react', 'nextjs', 'typescript', 'javascript', 'html', 'css', 'styled-components', 'portfolio', '이정필'],
+}
+
 const Page = () => {
 
     const text = "유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.";

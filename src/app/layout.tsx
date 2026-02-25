@@ -1,5 +1,6 @@
 import "./globals.css";
 import styled from "styled-components";
+import type { Metadata } from "next";
 import Ling from '../assets/webp/링.webp'
 import Tab from "../component/Tab";
 import MusicBar from "../component/MusicBar";
@@ -10,11 +11,11 @@ import MyProfile from "@/component/myProfile/MyProfile";
 import Header from '@/component/myProfile/Header'
 import { IconBase } from "react-icons";
 
-export const metadata = {
+export const metadata: Metadata = {
     // URL이 변경될 때마다 업데이트되는 메타데이터의 기본 URL을 설정 
     // 이는 SEO 및 소셜 미디어 공유에 도움이 됨
     // SEO영향이라기 보단 데이터를 정확히 읽도록 보장
-    metadataBase: new URL('https://jungportfolio.shop'),
+    metadataBase: new URL('https://jungpill.github.io/JungPillPortFolio/'),
     title: {
         default: '이정필 포트폴리오',
         template: '%s | 이정필 포트폴리오',
@@ -26,7 +27,7 @@ export const metadata = {
     // SEO플러스 라기보단 마이너스 방지를 위함
     alternates: {
         canonical: "/",
-        Languages: {"ko": "/ko", "en": "/en"},
+        languages: { ko: "/ko", en: "/en" },
     },
 
     robots: {
@@ -58,7 +59,7 @@ export const metadata = {
         google: "GOOGLE_SITE_VERIFICATION_CODE",
     },
 
-    content: "web developer, frontend developer, react, nextjs, typescript, javascript, html, css, styled-components, portfolio, 이정필",
+    keywords: ["web developer", "frontend developer", "react", "nextjs", "typescript", "javascript", "html", "css", "styled-components", "portfolio", "이정필"],
 }
 
 const Layout = ({ children }: { readonly children: React.ReactNode }) => {

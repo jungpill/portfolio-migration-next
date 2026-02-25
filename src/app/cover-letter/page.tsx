@@ -1,4 +1,18 @@
 import styled from "styled-components";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "자기소개",
+    description: "이정필의 성격, 문제 해결 경험, 성장 과정이 담긴 자기소개 페이지입니다.",
+    alternates: {
+        canonical: "/cover-letter",
+    },
+    openGraph: {
+        title: "자기소개 | 이정필 포트폴리오",
+        description: "성격, 경험, 성장 과정",
+        url: "/cover-letter",
+    },
+}
 
 const CoverLetter = () => {
 

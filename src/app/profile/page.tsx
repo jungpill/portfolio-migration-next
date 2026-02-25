@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import type { Metadata } from "next";
 import JavaScript from '../../assets/webp/JavaSCript.webp'
 import TypeScript from '../../assets/webp/TypeScript.webp'
 import React from '../../assets/webp/React.webp'
@@ -15,6 +16,19 @@ import Aws from '../../assets/webp/aws.webp'
 import Gcp from '../../assets/webp/gcp.webp'
 import CustomTooltip from "../../component/CustomTooltip";
 import Next from '../../assets/webp/icon_next.webp'
+
+export const metadata: Metadata = {
+    title: "프로필",
+    description: "이정필의 기술 스택, 경력, 교육 이력을 소개하는 페이지입니다.",
+    alternates: {
+        canonical: "/profile",
+    },
+    openGraph: {
+        title: "프로필 | 이정필 포트폴리오",
+        description: "기술 스택, 경력, 교육 이력",
+        url: "/profile",
+    },
+}
 
 const Page = () => {
 
