@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import {useState, useEffect} from 'react'
+import { useEffect } from 'react'
 import { axiosInstance } from "../../api/axios";
 import { useGuestBookStore } from "../../store/useGuestBookStore";
 
@@ -9,18 +9,24 @@ const MyProfileHeader = () => {
 
     const setGuestBookData = useGuestBookStore((p) => p.setGuestBookData)
     const setGuestBookLoaded = useGuestBookStore((p) => p.setGuestBookLoaded)
-
-    const [visitor, setVisitor] = useState({
-        today: '',
-        total: ''
-    })
+    const guestBookLoaded = useGuestBookStore((p) => p.guestBookLoaded)
+    const visitor = useGuestBookStore((p) => p.visitor)
+    const visitorLoaded = useGuestBookStore((p) => p.visitorLoaded)
+    const visitorLoading = useGuestBookStore((p) => p.visitorLoading)
+    const setVisitor = useGuestBookStore((p) => p.setVisitor)
+    const setVisitorLoaded = useGuestBookStore((p) => p.setVisitorLoaded)
+    const setVisitorLoading = useGuestBookStore((p) => p.setVisitorLoading)
 
     const Getvisitor = async () => {
+        setVisitorLoading(true)
         try {
           const response = await axiosInstance.post('/visitor/increment')
           setVisitor(response.data)
+          setVisitorLoaded(true)
         } catch (error) {
           console.error('Error:', error);
+        } finally {
+          setVisitorLoading(false)
         }
     };
 
@@ -44,10 +50,17 @@ const MyProfileHeader = () => {
     }
 
     useEffect(() => {
-        Getvisitor();
-        getGuestBookData();
-        postVisitor();
-    },[])
+        if (!visitorLoaded && !visitorLoading) {
+            Getvisitor();
+            postVisitor();
+        }
+    },[visitorLoaded, visitorLoading])
+
+    useEffect(() => {
+        if (!guestBookLoaded) {
+            getGuestBookData();
+        }
+    },[guestBookLoaded])
 
     return(
         <HeaderWrapper>
