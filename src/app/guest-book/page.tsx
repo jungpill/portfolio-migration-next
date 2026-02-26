@@ -81,6 +81,7 @@ const Page = () => {
                 role="listitem"
                 aria-labelledby={titleId}
                 aria-describedby={descId}
+                style={{ marginBottom: index === guestBookData.length - 1 ? "1rem" : "0" }}
               >
                 <Header as="header">
                   <MarginSpan id={titleId}>NO.{guest.id}</MarginSpan>
@@ -153,7 +154,7 @@ const GuestWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 70%;
+  height: 80%;
   overflow-y: auto;
   scrollbar-gutter: stable;
   align-items: center;
