@@ -30,7 +30,6 @@ const CommentField = () => {
     const showSuccessAlert = useAlertStore((s) => s.showSuccess)
     const showWarnAlert = useAlertStore((s) => s.showWarn);
     const setGuestBookData = useGuestBookStore((s) => s.setGuestBookData);
-    const guestBookData = useGuestBookStore((s) => s.guestBookData);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async() => {
@@ -77,7 +76,7 @@ const CommentFieldContainer = styled.div`
     flex-direction: column;
     position: absolute;
     bottom: 3%;
-    width: 85%;
+    width: 80%;
     background-color: #F2F2F2;
     padding: 1rem;
 `

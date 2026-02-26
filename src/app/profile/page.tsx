@@ -172,7 +172,7 @@ const Icon = styled.img`
                 var(--tw-shadow);
 
     @media(min-width: 1920px){
-        width: 4rem;
-        height: 3rem;
+        width: 70px;
+        height: 60px;
     }
 `

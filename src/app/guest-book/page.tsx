@@ -81,7 +81,7 @@ const Page = () => {
                 role="listitem"
                 aria-labelledby={titleId}
                 aria-describedby={descId}
-                style={{ marginBottom: index === guestBookData.length - 1 ? "1rem" : "0" }}
+                style={{ marginBottom: index === guestBookData.length - 1 ? "2rem" : "0" }}
               >
                 <Header as="header">
                   <MarginSpan id={titleId}>NO.{guest.id}</MarginSpan>
@@ -175,7 +175,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   padding: 5px;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   font-size: 0.8rem;
   background-color: #f2f2f2;
   width: 85%;
