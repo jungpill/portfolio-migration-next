@@ -86,26 +86,24 @@ const Jaychis = () => {
             <br/>
 
             <Content>
-                2.에러 전역 관리
+                2.무한스크롤 최적화 
             </Content>
             <Li>
-            개발자의 실수로 인한 에러와 네트워크 에러를 일관성 있게 처리하기 위해 에러 Context와 에러 Modal을 통해 에러를 전역적으로 관리하였습니다.
+            Dom 요소가 증가함에 따라 렌더링 속도가 지연되는 문제 발생
+            </Li>
+            <Li>
+            react virtualized 라이브러리를 이용하여 화면에 보이는 Dom요소만 렌더링 하는 방식으로 변경
+            </Li>
+            <Li>
+            React Developer Tools를 통한 속도 측정에서 렌더링 시간이 15ms에서 2.8ms로 단축
             </Li>
             <br/>
 
             <Content>
-                3.무한 스크롤
+                3.초기로딩속도 개선
             </Content>
             <Li>
-           react-virtualized 라이브러리를 활용하여 가상화된 스크롤을 통해 화면에 보이는 DOM 요소만 렌더링 하는 방식으로 무한 스크롤을 구현하여 렌더링 시간을 15ms에서 2.8ms로 단축 시켰습니다.
-            </Li>
-            <br/>
-
-            <Content>
-                4.초기로딩속도 개선
-            </Content>
-            <Li>
-            lighthouse로 측정한 성능 점수 49점 -{">"} 92점으로 약 88% 개선 
+                lighthouse로 측정한 성능 점수 49점 -{">"} 92점으로 약 88% 개선 
             </Li>
             <Li>
                 동적 로딩을 통한 메인번들 사이즈 감소, Tree Shaking를 통한 불필요한 코드 제거 
@@ -116,7 +114,7 @@ const Jaychis = () => {
             <br/>
 
             <Content>
-                5.2개의 서버를 통해 안정성 확보 
+                4.2개의 서버를 통해 안정성 확보 
             </Content>
             <Li>
             로컬 환경에서는 괜찮았지만 배포 이후 버그가 발생하거나 예상과 다른 UI가 적용될 수 있다는 점을 인지
@@ -127,7 +125,7 @@ const Jaychis = () => {
             <br/>
 
             <Content>
-                6.이미지 최적화
+                5.이미지 최적화
             </Content>
             <Li>
             커뮤니티 특성상 불특정 다수의 유저가 이미지를 업로드하여 용량 문제로 초기 로딩 속도가 저하되는 문제가 발생
@@ -138,7 +136,7 @@ const Jaychis = () => {
             <br/>
 
             <Content>
-                7.커스텀 Hook
+                6.커스텀 Hook
             </Content>
             <Li>
             반복적으로 사용되는 로직을 효율적으로 관리하고 코드의 재사용성을 높이기 위해 커스텀 Hook을 개발하여 사용하였습니다.
@@ -146,7 +144,7 @@ const Jaychis = () => {
             <br/>
 
             <Content>
-                8.테스트 코드 작성
+                7.테스트 코드 작성
             </Content>
             <Li>
             Jest와 testing-library를 활용하여 단위 테스트 코드를 작성하였습니다.

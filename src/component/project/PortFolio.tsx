@@ -77,20 +77,23 @@ const PortFolio = () => {
             <Title style = {{marginBottom:'1rem'}}>
                 상세내용
             </Title>
-            
-            <Content>
-                1.프로젝트 내 이미지 webp로 자동 변환<br/>
-            </Content>
-            <Li>
-            모든 이미지를 webp로 자동 변환 되도록 해 이미지 용량을 줄이고, 개발 효율성을 향상시켰습니다.
-            </Li>
-            <br/>
 
             <Content>
-                2.사용자 경험을 고려한 UI/UX 개선
+                1.React → Next.js 마이그레이션
+            </Content>
+                <Li>
+                SPA 구조를 Next.js(App Router)로 전환하여 서버 컴포넌트 기반 렌더링으로 초기 로딩을 개선하고,
+                Metadata/Open Graph 정비로 검색 노출 및 공유 미리보기(SEO)를 강화했습니다.
+                </Li>
+            
+            <Content>
+                2.프로젝트 내 이미지 webp로 자동 변환<br/>
             </Content>
             <Li>
-                애니메이션 적용 및 반응형 웹 디자인을 통해 사용자 경험을 개선하였습니다.
+                스크린샷 이미지 및 AI 생성 이미지로 인해 번들/정적 자산 용량이 증가하는 문제 확인 
+            </Li>
+            <Li>
+                디렉토리 내 이미지들을 WebP로 자동 변환하는 프로세스를 구축하여 번들 사이즈 감소 및 초기 로딩 속도 개선
             </Li>
             <br/>
 
@@ -98,7 +101,8 @@ const PortFolio = () => {
                 3.깃허브 액션을 통한 CI / CD 파이프라인
             </Content>
             <Li>
-            GitHub Actions을 통한 CI/CD 파이프라인 구축으로 배포 자동화와 개발 효율성을 향상 시켰습니다
+            빌드·테스트·배포 파이프라인을 자동화하여 릴리즈 시간 단축 변경 사항을 조기에 검증할 수 있도록 구
+            성해 배포 안정성 및 버그 사전 예방 체계 강화
             </Li>
 
             <Content>
@@ -171,10 +175,22 @@ const Hr = styled.hr`
 `
 
 const Li = styled.li`
-    font-weight: 700;
-    font-size: .8rem;
+  position: relative;
+  padding-left: 1.2em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 3rem;
+  color: black;
+  list-style: none;
+  color: #22222280;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
     line-height: 1.5rem;
-    margin-left: .5rem;
-    color: #22222280;
-    margin-right: 3rem;
-`
+  }
+`;

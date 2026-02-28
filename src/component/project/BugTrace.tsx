@@ -10,7 +10,7 @@ const Poisoning = () => {
 
     return(
         <PoisoningContainer>
-            <img src = {중독.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이미지 로드중'/>
+            <img src = {중독.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = 'BugTrace 이미지'/>
             <Title>
                 프로젝트명
             </Title>
@@ -70,25 +70,28 @@ const Poisoning = () => {
             </Wrapper>
             <Hr/>
             <Content>
-                1.Oauth2 구현
+                1.재현 가능성 향상
             </Content>
             <Li>
-                구글, 카카오, 네이버 로그인 기능을 구현하였습니다
+                에러 발생 전 큐(Circular Queue)에 사용자의 동작을 수집하고 에러 발생시 그동안 수집된 사용자의 동작과 에러를 저장
             </Li>
             <br/>
             <Content>
-                2.데이터 시각화            
+                2.크롬 Extension(확장 프로그램) 출시      
             </Content>
             <Li>
-                차트 라이브러리를 이용하여 재사용 가능한 차트 컴포넌트를 개발하고 쉽게 데이터 시각화를 구현하였습니다. 
+                크롬 확장프로그램으로 개발하여 개발자가 아닌 기획/QA 인력들도 쉽게 사용 가능
             </Li>
 
             <br/>
             <Content>
-                3.크로스 플랫폼을 통한 앱 개발
+                3.최소 권한 원칙 적용
             </Content>
             <Li>
-                크로스 플랫폼을 통한 개발을 통해 개발 속도를 높이고 유지보수를 용이하게 하였습니다.
+                 사용자 버튼 클릭 시 현재 탭에만 동작 하도록 설계해 권한 범위를 축소하여 보안성 향상
+            </Li>
+            <Li>
+                 도메인별 활성화로 불필요한 수집을 차단하고, QA 대상 서비스만 선택적으로 관측 가능하도록 설계 
             </Li>
 
         </PoisoningContainer>
@@ -156,10 +159,22 @@ const Hr = styled.hr`
 `
 
 const Li = styled.li`
-    font-weight: 700;
-    font-size: .8rem;
+  position: relative;
+  padding-left: 1.2em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 3rem;
+  color: black;
+  list-style: none;
+  color: #22222280;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
     line-height: 1.5rem;
-    margin-left: .5rem;
-    color: #22222280;
-    margin-right: 3rem;
-` 
+  }
+`;

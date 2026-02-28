@@ -79,7 +79,7 @@ const Cut = () => {
                 상세내용
             </Title>
             <Content>
-                1.좋아요 응답시간 99% 개선<br/>
+                1.낙관적 업데이트를 통한 체감 반응 시간 99% 향상<br/>
             </Content>
             <Li>
             좋아요 API 평균 응답 시간이 351ms로, 사용자 인터랙션 후 UI 반응이 지연되는 문제가 발생했습니다
@@ -108,22 +108,6 @@ const Cut = () => {
             </Li>
             <Li>
             GitHub Actions을 통한 CI/CD 파이프라인 구축으로 배포 자동화와 개발 효율성을 향상 시켰습니다
-            </Li>
-            <br/>
-
-            <Content>
-                4.Zustand를 통한 전역 상태관리
-            </Content>
-            <Li>
-            프로젝트의 규모가 크지 않아 복잡한 상태 관리나 다단계 상태 변화가 필요한 상황이 아니었기에  Redux나 Recoil보다는 보일러 플레이트 코드가 적고 가벼운 Zustand를 사용하였습니다.
-            </Li>
-            <br/>
-
-            <Content>
-                5.문서화
-            </Content>
-            <Li>
-            요구사항과 복잡한 로직을 가진 기능들을 이해하기 쉽게 하기 위해 UseCaseDiagram, Sequence, System Architecture 등 문서화 작업을 진행했습니다
             </Li>
             <br/>
         </JaychisContainer>
@@ -188,10 +172,22 @@ const Hr = styled.hr`
 `
 
 const Li = styled.li`
-    font-weight: 700;
-    font-size: .8rem;
+  position: relative;
+  padding-left: 1.2em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 3rem;
+  color: black;
+  list-style: none;
+  color: #22222280;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
     line-height: 1.5rem;
-    margin-left: .5rem;
-    color: #22222280;
-    margin-right: 3rem;
-`
+  }
+`;
