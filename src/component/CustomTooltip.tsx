@@ -31,7 +31,6 @@ const Wrapper = styled.div`
   margin-right: 1rem;
   font-size: 0.8rem;
   line-height: 1.5rem;
-  margin-top: 2rem;
   
   @media(min-width: 1920px){
     margin-right: 2.5rem;

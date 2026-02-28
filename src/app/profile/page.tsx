@@ -66,7 +66,7 @@ const Page = () => {
                 </h1>
                 {/* 기술 스택 및 도구 */}
                 <section aria-labelledby="tech-title">
-                    <Title as="h2" id="tech-title">기술 스택 및 도구</Title>
+                    <Title as="h2" id="tech-title" style={{marginBottom: '1rem'}}>기술 스택 및 도구</Title>
                     
                         <ul style={{display: 'flex', flexWrap: 'wrap',  padding: 0, margin: 0, listStyle: 'none'}}> 
                             {techList.map((tech) => (

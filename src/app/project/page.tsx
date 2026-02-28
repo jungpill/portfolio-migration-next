@@ -11,7 +11,7 @@ import Cut from "../../component/project//Cut";
 import PortFolio from "../../component/project//PortFolio";
 import { useState } from "react";
 import 중독 from '../../assets/webp/중독.webp'
-import Poisoning from "../../component/project//Poisoning";
+import Poisoning from "../../component/project/BugTrace";
 import { sizes } from "../../styles/BreakPoints";
 import React from "react";
 
@@ -74,9 +74,10 @@ const Page = () => {
                         <ImageCard
                         img={중독.src}
                         />
-                        <Title id="poisoning-title">중독</Title>
-                        <Text>2025.06 ~ 진행중</Text>
-                        <Text>중독 개선을 돕는 앱 금연뿐 아니라 다양한 중독 문제를 돕는 서비스로 확장할 예정</Text>
+                        <Title id="poisoning-title">BugTrace</Title>
+                        <Text>2026.01 ~ 2026.02</Text>
+                        <Text>사용자의 이벤트를 수집하는 프로그램으로
+                        에러별로 사용자의 행동을 보여줘 재현이 어려운 에러의 재현을 돕습니다.</Text>
                     </Card>
 
                     <Card 
@@ -129,12 +130,9 @@ const ProjectWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    padding: 10px;
     justify-content: center;
     align-items: center;
     margin-left: 1.5rem;
-    padding: 5rem;
     margin-top: 1rem;
     @media(max-width: ${sizes.laptop}){
     align-items: flex-start;
@@ -147,7 +145,7 @@ const Content = styled.div`
     width: 100%;
     line-height: 2rem;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem; 
+    gap: 2rem;
 
     @media (max-width: ${sizes.laptop}) {
         grid-template-columns: 1fr; 
@@ -186,9 +184,7 @@ const Title = styled.h2`
     font-weight: 600;
     line-height: 2rem;
     font-size: 1rem;
-    margin-top: 1%;
-    margin-left: 1%;
-    margin-bottom: 0;
+    margin: 0.5rem 1rem 0 0;
 `
 
 const Text = styled.p`
