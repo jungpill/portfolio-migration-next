@@ -43,13 +43,14 @@ const Overlay = styled.div<{ $type: AlertType }>`
   position: fixed;
   left: 0;
   right: 0;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1002;
 
   pointer-events: none;
-  transform: ${({ $type }) => ($type !== null ? 'translateY(40px)' : 'translateY(16px)')};
+  transform: ${({ $type }) => ($type !== null ? 'translateY(0)' : 'translateY(-20px)')};
   opacity: ${({ $type }) => ($type !== null ? 1 : 0)};
   transition: transform 0.5s ease, opacity 0.7s ease;
   will-change: transform, opacity;

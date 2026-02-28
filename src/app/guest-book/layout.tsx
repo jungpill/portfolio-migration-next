@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Alert from "@/component/Alert";
 
 export const metadata: Metadata = {
     title: "방명록",
@@ -18,5 +19,10 @@ export default function GuestBookLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return children;
+    return (
+        <>
+        <Alert/>
+        {children}
+        </>
+    )
 }

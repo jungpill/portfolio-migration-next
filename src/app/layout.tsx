@@ -9,7 +9,6 @@ import Image from "next/image";
 import StyledComponentsRegistry from "@/utils/StyledComponentsRegistry";
 import MyProfile from "@/component/myProfile/MyProfile";
 import Header from '@/component/myProfile/Header'
-import { IconBase } from "react-icons";
 
 export const metadata: Metadata = {
     // URL이 변경될 때마다 업데이트되는 메타데이터의 기본 URL을 설정 
