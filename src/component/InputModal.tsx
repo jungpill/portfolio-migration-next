@@ -45,7 +45,12 @@ const InputModal = ({
             onChange={(e) => setPassword(e.target.value)}
             />
             <ButtonGroup>
-            <OkButton onClick = {() => {eventHandler(password)}}>확인</OkButton>
+            <OkButton onClick = {() => {
+              eventHandler(password);
+              setPassword('');
+            }}>
+                확인
+            </OkButton>
             <CancelButton onClick={handleClose}>아니오</CancelButton>
             </ButtonGroup>
             </ModalBox>
