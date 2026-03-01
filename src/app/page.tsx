@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import test from "../assets/webp/미니홈피.webp";
+import Image from 'next/image';
 
 export const metadata = {
     title: '이정필 포트폴리오',
@@ -28,7 +29,7 @@ const Page = () => {
                 ))}
             </TextContainer>
 
-            <Img src={test.src}/>
+            <Image src={test} alt="test" style={{width: '90%', height: '75%', marginTop: '2%'}}/>
 
             <BalloonWrap>
                 <Balloon>
@@ -86,12 +87,6 @@ const Letter = styled.h1`
             transform: translateY(0);
         }
     }
-`
-
-const Img = styled.img`
-    width: 90%;
-    height: 75%;
-    margin-top: 2%; 
 `
 
 const BalloonWrap = styled.div`

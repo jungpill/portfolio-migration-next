@@ -16,6 +16,7 @@ import Aws from '../../assets/webp/aws.webp'
 import Gcp from '../../assets/webp/gcp.webp'
 import CustomTooltip from "../../component/CustomTooltip";
 import Next from '../../assets/webp/icon_next.webp'
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "프로필",
