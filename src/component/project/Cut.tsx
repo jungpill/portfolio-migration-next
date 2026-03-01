@@ -12,7 +12,7 @@ const Cut = () => {
 
     return(
         <JaychisContainer>
-            <img src = {싹둑싹둑.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이미지 로드중'/>
+            <img src = {싹둑싹둑.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '싹둑싹둑 프로젝트 이미지'/>
             <Title>
                 프로젝트명
             </Title>
@@ -56,22 +56,22 @@ const Cut = () => {
             </Title>
             <Wrapper>
             <Content>
-                <CustomTooltip title="React" position="bottom"><Icon src = {React.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="React" position="bottom"><Icon src = {React.src} alt = 'React 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="JavaScript" position="bottom"><Icon src = {Javascript.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="JavaScript" position="bottom"><Icon src = {Javascript.src} alt = 'JavaScript 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand.src} alt = 'Zustand 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd.src} alt = 'Ant Design 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Tailwind-css" position="bottom"><Icon src = {Tail.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="Tailwind-css" position="bottom"><Icon src = {Tail.src} alt = 'Tailwind CSS 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title = 'ReactQuery' position="bottom"><Icon src = {ReactQuery.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title = 'ReactQuery' position="bottom"><Icon src = {ReactQuery.src} alt = 'React Query 아이콘'/></CustomTooltip>
             </Content>
             </Wrapper>
             <Hr/>

@@ -55,16 +55,16 @@ const Poisoning = () => {
             </Title>
             <Wrapper>
             <Content>
-                <CustomTooltip title="React" position="bottom"><Icon src = {React.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="React" position="bottom"><Icon src = {React.src} alt = 'React 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="TpyeScript" position="bottom"><Icon src = {TypeScript.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="TpyeScript" position="bottom"><Icon src = {TypeScript.src} alt = 'TypeScript 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand.src} alt = 'Zustand 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="tailwind css" position="bottom"><Icon src = {Tailwind.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="tailwind css" position="bottom"><Icon src = {Tailwind.src} alt = 'Tailwind CSS 아이콘'/></CustomTooltip>
             </Content>
             
             </Wrapper>

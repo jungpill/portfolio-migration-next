@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { sizes } from "../styles/BreakPoints";
 
-const ImageCard = ({img}: {img:string}) => {
+const ImageCard = ({
+    img,
+    title   
+    }: {img:string, title:string}) => {
 
     return(
         <ImageCardContainer>
-            <Img src = {img} alt = '이미지 로드중' loading="eager"/>
+            <Img src = {img} alt = {title} loading="eager"/>
         </ImageCardContainer>
     )
 }

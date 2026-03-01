@@ -10,10 +10,10 @@ const Info = () => {
     return(
         <InfoContainer>
             <InfoUl>
-                <InfoLi><StyledImage src = {call.src} alt = '이미지 로드중'/> 010-5628-7623</InfoLi>
-                <InfoLi><StyledImage src = {email.src} alt = '이미지 로드중'/> wjdvlf99@naver.com</InfoLi>
-                <InfoLi><StyledImage src = {home.src} alt = '이미지 로드중'/> 경기도 안양시 석수동</InfoLi>
-                <a href = 'https://github.com/jungpill' target="_blank" rel="noreferrer"><InfoLi><StyledImage src = {github.src} alt = '이미지 로드중'/> https://github.com/jungpill</InfoLi></a>
+                <InfoLi><StyledImage src = {call.src} alt = '전화 아이콘'/> 010-5628-7623</InfoLi>
+                <InfoLi><StyledImage src = {email.src} alt = '이메일 아이콘'/> wjdvlf99@naver.com</InfoLi>
+                <InfoLi><StyledImage src = {home.src} alt = '집 아이콘'/> 경기도 안양시 석수동</InfoLi>
+                <a href = 'https://github.com/jungpill' target="_blank" rel="noreferrer"><InfoLi><StyledImage src = {github.src} alt = '깃허브 아이콘'/> https://github.com/jungpill</InfoLi></a>
             </InfoUl>
         </InfoContainer>
     )

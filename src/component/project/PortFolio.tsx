@@ -11,7 +11,7 @@ const PortFolio = () => {
 
     return(
         <JaychisContainer>
-            <img src = {PortFolioImg.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이미지 로드중'/>
+            <img src = {PortFolioImg.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = '이정필 포트폴리오 이미지'/>
             <Title>
                 프로젝트명
             </Title>
@@ -57,19 +57,19 @@ const PortFolio = () => {
 
             <Wrapper>
             <Content>
-                <CustomTooltip title="React" position="bottom"><Icon src = {React.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="React" position="bottom"><Icon src = {React.src} alt = 'React 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="TypeScript" position="bottom"><Icon src = {TpyeScript.src } alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="TypeScript" position="bottom"><Icon src = {TpyeScript.src } alt = 'TypeScript 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="Zustand" position="bottom"><Icon src = {Zustand.src} alt = 'Zustand 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="styled-component" position="bottom"><Icon src = {styledComponent.src} alt = 'Styled Components 아이콘'/></CustomTooltip>
             </Content>
             <Content>
-                <CustomTooltip title="Framer-Motion" position="bottom"><Icon src = {FramerMotion.src} alt = '이미지 로드중'/></CustomTooltip>
+                <CustomTooltip title="Framer-Motion" position="bottom"><Icon src = {FramerMotion.src} alt = 'Framer Motion 아이콘'/></CustomTooltip>
             </Content>
             </Wrapper>
 

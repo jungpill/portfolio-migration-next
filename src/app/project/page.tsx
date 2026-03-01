@@ -42,6 +42,7 @@ const Page = () => {
                     >
                         <ImageCard
                         img={JaychisImg.src}
+                        title="Jaychis 이미지"
                         />
                         <Title id="jaychis-title">Jaychis</Title>
                         <Text>2024.09 ~ 2025.01</Text>
@@ -57,6 +58,7 @@ const Page = () => {
                     >
                         <ImageCard
                         img={싹둑싹둑Img.src}
+                        title="싹둑싹둑 이미지"
                         />
                         <Title id="cut-title">싹둑싹둑</Title>
                         <Text>2024.02 ~ 2024.06</Text>
@@ -73,6 +75,7 @@ const Page = () => {
                     >
                         <ImageCard
                         img={중독.src}
+                        title="BugTrace 이미지"
                         />
                         <Title id="poisoning-title">BugTrace</Title>
                         <Text>2026.01 ~ 2026.02</Text>
@@ -89,6 +92,7 @@ const Page = () => {
                     >
                         <ImageCard
                         img={PortFolilImg.src}
+                        title="이정필의 싸이월드 포트폴리오 이미지"
                         />
                         <Title id="portfolio-title">싸이월드 포트폴리오</Title>
                         <Text>2025.04 ~ 2025.04</Text>
