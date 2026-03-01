@@ -105,12 +105,6 @@ const PortFolio = () => {
             성해 배포 안정성 및 버그 사전 예방 체계 강화
             </Li>
 
-            <Content>
-                4.React로 개발된 프로젝트를 next.js로 마이그레이션
-            </Content>
-            <Li>
-                React로 개발된 프로젝트를 Next.js로 리팩토링하여 SEO 최적화와 서버 사이드 렌더링을 구현하였습니다.
-            </Li>
             <br/>
 
         </JaychisContainer>
