@@ -25,9 +25,9 @@ const MyProfileContainer = styled.div`
     background-color: white;
     border: 2px solid skyblue;
     border-radius: 20px;
-    padding: 0.5rem;
     align-items: center;
-    margin-left: 1%;
+    box-sizing: border-box;
+    justify-content: center;
 `
 
 const Wrapper = styled.div`
@@ -39,5 +39,4 @@ const Wrapper = styled.div`
     padding: 10px;
     align-items: center;
     flex-direction: column;
-    margin-left: 1%;
 `

@@ -116,6 +116,7 @@ const ProjectContainer = styled.div`
     margin-left: 1%;
     overflow-y: scroll;
     padding: 0.5rem;
+    box-sizing: border-box;
 
     &::-webkit-scrollbar {
     width: 0px;

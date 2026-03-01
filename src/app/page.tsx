@@ -48,13 +48,13 @@ const BodyContainer = styled.div`
     background-color: white;
     border: 2px solid skyblue;
     border-radius: 20px;
-    padding: 0.5rem;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     margin-left: 1%;
     padding-bottom: .8rem;
     position: relative;
+    box-sizing: border-box;
 
     /* 페이지 전체 등장(기존 BodyContainer motion 효과 대체) */
     opacity: 0;
