@@ -111,7 +111,7 @@ const MusicBar = () => {
         <Icon data-type="next" src={next.src} alt="다음" />
       </IconBox>
 
-      <audio ref={audioRef} src={current.src} onEnded={goNext} />
+      <audio ref={audioRef} src={encodeURI(current.src)} onEnded={goNext} />
     </MusicBarContainer>
   );
 };
