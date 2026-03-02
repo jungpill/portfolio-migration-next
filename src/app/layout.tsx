@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     // URL이 변경될 때마다 업데이트되는 메타데이터의 기본 URL을 설정 
     // 이는 SEO 및 소셜 미디어 공유에 도움이 됨
     // SEO영향이라기 보단 데이터를 정확히 읽도록 보장
-    metadataBase: new URL('https://jungpill.github.io/JungPillPortFolio/'),
+    metadataBase: new URL('https://portfolio-migration-next.vercel.app/'),
     title: {
         default: '이정필 포트폴리오',
         template: '%s | 이정필 포트폴리오',

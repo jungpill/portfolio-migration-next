@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://jungpillportfolio.shop";
+const SITE_URL = "https://portfolio-migration-next.vercel.app/";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   
