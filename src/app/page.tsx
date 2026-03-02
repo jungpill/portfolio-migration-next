@@ -114,7 +114,7 @@ const Balloon = styled.p`
     font-size: 1rem;
     font-weight: 500;
     text-align: center;
-    top: 44%;
+    top: 41%;
     right: 10%;
     white-space: pre-wrap;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15),

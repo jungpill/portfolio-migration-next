@@ -26,7 +26,8 @@ const MyProfileHeader = () => {
         } catch (error) {
           console.error('Error:', error);
         } finally {
-          setVisitorLoading(false)
+          setVisitorLoading(false);
+          setVisitorLoaded(true);
         }
     };
 
