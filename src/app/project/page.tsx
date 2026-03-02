@@ -10,10 +10,10 @@ import PortFolilImg from '../../assets/webp/PortFoilo.webp'
 import Cut from "../../component/project//Cut";
 import PortFolio from "../../component/project//PortFolio";
 import { useState } from "react";
-import 중독 from '../../assets/webp/중독.webp'
 import Poisoning from "../../component/project/BugTrace";
 import { sizes } from "../../styles/BreakPoints";
 import React from "react";
+import BugTrace from '../../assets/BugTrace.png'
 
 const Page = () => {
     const [modalChildren, setModalChildren] = useState<React.ReactNode | null>(null)
@@ -74,7 +74,7 @@ const Page = () => {
                     aria-controls="project-modal"
                     >
                         <ImageCard
-                        img={중독.src}
+                        img={BugTrace.src}
                         title="BugTrace 이미지"
                         />
                         <Title id="poisoning-title">BugTrace</Title>

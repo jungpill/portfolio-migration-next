@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import 중독 from '../../assets/webp/중독.webp'
 import CustomTooltip from "../CustomTooltip";
 import TypeScript from '../../assets/webp/TypeScript.webp'
 import Zustand from '../../assets/webp/Zustand.webp'
 import Tailwind from '../../assets/webp/Tailwind.webp'
 import React from '../../assets/webp/React.webp'
+import BugTraceImage from '../../assets/BugTrace.png'
 
 const Poisoning = () => {
 
     return(
         <PoisoningContainer>
-            <img src = {중독.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = 'BugTrace 이미지'/>
+            <img src = {BugTraceImage.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = 'BugTrace 이미지'/>
             <Title>
                 프로젝트명
             </Title>
