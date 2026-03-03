@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     },
 
     verification: {
-        google: "google-site-verification: googleb36d3f14cf65c409.html",
+        google: "C7cOjEAlWD9AuNn2ilH3gXUka7TxqhAfJGk3aTXWtQU",
     },
 
     keywords: ["web developer", "frontend developer", "react", "nextjs", "typescript", "javascript", "html", "css", "styled-components", "portfolio", "이정필"],
