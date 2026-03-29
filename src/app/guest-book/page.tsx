@@ -23,9 +23,16 @@ interface GuestbookEntry {
 
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [guestBookLoaded, setGuestBookLoaded] = useState(false);
   const [guestBookData, setGuestBookData] = useState<GuestbookEntry[]>([{
       id: 0,
+      userId: "",
+      password: "",
+      content: "",
+      date: "",
+  },{
+      id: 1,
       userId: "",
       password: "",
       content: "",
@@ -64,15 +71,16 @@ const Page = () => {
   };
 
   const getGuestBookData = async () => {
-          try{
-              const response = await axiosInstance.get('guestbook')
-              setGuestBookData(response.data)
-          }catch(err){
-              console.error(err)
-          }finally{
-              setGuestBookLoaded(true)
-          }
+      try{
+          const response = await axiosInstance.get('guestbook')
+          setGuestBookData(response.data)
+      }catch(err){
+          setFailed(true);
+          console.error(err)
+      }finally{
+          setGuestBookLoaded(true)
       }
+  }
   
   useEffect(() => {
       if (!guestBookLoaded) {
@@ -95,8 +103,10 @@ const Page = () => {
       />
 
       <GuestWrapper role="list">
-        {!guestBookLoaded ? null : guestBookData?.length ? (
-          guestBookData.sort((a,b) => a.id - b.id).map((guest, index) => {
+        {
+          failed ? (
+            <EmptyText>방명록 데이터를 불러오는데 실패했습니다. 잠시 후 다시 시도해주세요.</EmptyText>
+          ) : guestBookData.sort((a,b) => a.id - b.id).map((guest, index) => {
             return (
               <>
                 <Card
@@ -113,9 +123,7 @@ const Page = () => {
               </>
             );
           })
-        ) : (
-          <EmptyText>아직 등록된 방명록이 없습니다.</EmptyText>
-        )}
+        }
       </GuestWrapper>
 
       <CommentField

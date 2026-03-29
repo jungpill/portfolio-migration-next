@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { axiosInstance } from "../api/axios";
 import { useState, type Dispatch, type SetStateAction } from "react";
 import { useAlertStore } from "../store/useAlertStore";
-import { useGuestBookStore } from "../store/useGuestBookStore";
 
 interface SubmitType {
     readonly userId: string;
