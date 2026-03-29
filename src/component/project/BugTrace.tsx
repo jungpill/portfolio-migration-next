@@ -82,6 +82,9 @@ const Poisoning = () => {
             <Li>
                 크롬 확장프로그램으로 개발하여 개발자가 아닌 기획/QA 인력들도 쉽게 사용 가능
             </Li>
+            <Li>
+                출시 1개월만에 미국, 독일 등 해외 국가에서 100명 이상의 실사용자 확보
+            </Li>
 
             <br/>
             <Content>
@@ -106,11 +109,12 @@ const PoisoningContainer = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    position: fixed;
 
-     &::-webkit-scrollbar {
+    &::-webkit-scrollbar {
         width: 0px;
     }
+
+    
 `
 
 const Title = styled.div`

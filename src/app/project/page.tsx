@@ -50,23 +50,6 @@ const Page = () => {
                     </Card>
 
                     <Card 
-                    onClick = {() => {setModalChildren(<Cut/>)}} 
-                    aria-labelledby="cut-title" 
-                    aria-describedby="cut-period cut-desc" 
-                    aria-haspopup="dialog" 
-                    aria-controls="project-modal"
-                    >
-                        <ImageCard
-                        img={싹둑싹둑Img.src}
-                        title="싹둑싹둑 이미지"
-                        />
-                        <Title id="cut-title">싹둑싹둑</Title>
-                        <Text>2024.02 ~ 2024.06</Text>
-                        <Text>판매자와 디자이너의 매칭을 통해 의류 구매 및 리폼을 동시에 진행 가능한 웹 플랫폼
-                        </Text>
-                    </Card>
-
-                    <Card 
                     onClick = {() => {setModalChildren(<Poisoning/>)}} 
                     aria-labelledby="poisoning-title"
                     aria-describedby="poisoning-period poisoning-desc"
