@@ -5,11 +5,18 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import { StaticImageData } from "next/image";
 
-const Card = ({ content, date, id, userId,image }: { content: string; date: string; id: number; userId: string; image: StaticImageData }) => {
+interface CardProps {
+    content: string;
+    date: string;
+    id: number;
+    userId: string;
+    image: StaticImageData;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setDeleteTargetId: React.Dispatch<React.SetStateAction<number | null>>;
+}
 
-    const [isOpen, setIsOpen] = useState(false);
-    // sessionStorage 대신 state로 관리 (UI 변화 없음)
-    const [deleteTargetId, setDeleteTargetId] = useState<number | null>(null);
+const Card = ({ content, date, id, userId,image,setIsOpen, setDeleteTargetId }: CardProps) => {
+
     const titleId = `guest-title-${id}`;
     const descId = `guest-desc-${id}`;
 
@@ -20,7 +27,6 @@ const Card = ({ content, date, id, userId,image }: { content: string; date: stri
 
     return (
         <>
-        
             <GuestItem
                 key={id}
                 as="article"

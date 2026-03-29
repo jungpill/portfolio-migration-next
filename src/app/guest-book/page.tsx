@@ -107,6 +107,8 @@ const Page = () => {
                   id={guest.id}
                   userId={guest.userId}
                   image={images[index % images.length]}
+                  setIsOpen={setIsOpen}
+                  setDeleteTargetId={setDeleteTargetId}
                 />
               </>
             );
@@ -116,7 +118,9 @@ const Page = () => {
         )}
       </GuestWrapper>
 
-      <CommentField />
+      <CommentField
+      setGuestBookData={setGuestBookData}
+      />
     </GuestBookContainer>
   );
 };

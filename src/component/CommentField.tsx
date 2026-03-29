@@ -18,9 +18,13 @@ export interface GuestbookEntry {
     password: string;
     content: string;
     date: string; 
-  }
+}
 
-const CommentField = () => {
+interface CommentFieldProps {
+    setGuestBookData: Dispatch<SetStateAction<GuestbookEntry[]>>
+}
+
+const CommentField = ({ setGuestBookData }: CommentFieldProps) => {
 
     const [submitData, setSubmitData] = useState<SubmitType>({
         userId: '', 
@@ -29,7 +33,6 @@ const CommentField = () => {
     });
     const showSuccessAlert = useAlertStore((s) => s.showSuccess)
     const showWarnAlert = useAlertStore((s) => s.showWarn);
-    const setGuestBookData = useGuestBookStore((s) => s.setGuestBookData);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async() => {
@@ -75,7 +78,7 @@ const CommentFieldContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 0;
+    bottom: 3%;
     width: 80%;
     background-color: #F2F2F2;
     padding: 1rem;

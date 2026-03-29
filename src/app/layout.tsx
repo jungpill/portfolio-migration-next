@@ -75,10 +75,10 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
                 <Header/>
                 <MyProfile/>
             </DottedLine>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '20%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '25%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '70%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '28.6%', top: '75%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '20%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '25%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '70%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
+                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '75%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
                 <RightPanelArea>
                     <BackGroundgray>
                         <ScrollArea>
