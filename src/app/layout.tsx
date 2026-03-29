@@ -122,7 +122,7 @@ const ContentContainer = styled.div`
     justify-content: center;
     padding: 20px;
     width: 85%;
-    height: 92%;
+    height: 97%;
     background-color: skyblue;
     box-sizing: border-box;
 `
@@ -140,7 +140,7 @@ const BackGroundgray = styled.div`
 const RightPanelArea = styled.div`
     display: flex;
     position: relative;
-    height: 98%;
+    height: 100%;
     width: 70%;
 `
 
@@ -166,8 +166,8 @@ const DottedLine = styled.div`
     align-items: center;
     border: 1px solid black;
     border-radius: 30px;
-    width: 30%;
-    height: 98%;
+    width: 28%;
+    height: 100%;
     padding: 0.75rem;
     background-color: #F2F2F2;
     flex-direction: column;
