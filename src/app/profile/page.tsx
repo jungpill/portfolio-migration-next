@@ -48,7 +48,6 @@ const Page = () => {
         { title: "React Query", icon: ReactQuery },
         { title: "Styled Components", icon: Styled },
         { title: "chart.js", icon: chart_js },
-        { title: "Ant Design", icon: AntDesign },
         { title: "Confluence", icon: Confluence },
         { title: "Jira", icon: Jira },
         { title: "GitHub", icon: GitHub },
