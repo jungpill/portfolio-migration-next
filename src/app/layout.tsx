@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     },
     description: '싸이월드를 오마주해 만든 포트폴리오 입니다.',
 
-
     //“이 페이지의 대표 URL은 이거다”를 선언해서 
     // 중복/분산된 평가(링크/신호)를 한 URL로 모으는 역할을 함. 
     // SEO플러스 라기보단 마이너스 방지를 위함
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
     },
 
     verification: {
-        google: "C7cOjEAlWD9AuNn2ilH3gXUka7TxqhAfJGk3aTXWtQU",
+        google: "GOOGLE_SITE_VERIFICATION_CODE",
     },
 
     keywords: ["web developer", "frontend developer", "react", "nextjs", "typescript", "javascript", "html", "css", "styled-components", "portfolio", "이정필"],
@@ -123,7 +122,7 @@ const ContentContainer = styled.div`
     justify-content: center;
     padding: 20px;
     width: 85%;
-    height: 90%;
+    height: 92%;
     background-color: skyblue;
     box-sizing: border-box;
 `
