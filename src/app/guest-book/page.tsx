@@ -70,7 +70,7 @@ const Page = () => {
 
       <GuestWrapper role="list">
         {!guestBookLoaded ? null : guestBookData?.length ? (
-          guestBookData.map((guest, index) => {
+          guestBookData.sort((a,b) => a.id - b.id).map((guest, index) => {
             const titleId = `guest-title-${guest.id}`;
             const descId = `guest-desc-${guest.id}`;
 
