@@ -118,16 +118,23 @@ const ProjectContainer = styled.div`
     align-items: center;
     flex-direction: column;
     margin-left: 1%;
+    padding-bottom: .8rem;
     overflow-y: scroll;
-    padding: 0.5rem;
     box-sizing: border-box;
-
+    
     &::-webkit-scrollbar {
     width: 0px;
-  }
+    }
 
-  @media(max-width: ${sizes.laptop}){
-    padding-top: 1rem;
+    opacity: 0;
+    transform: translateX(40px);
+    animation: pageIn 0.5s ease forwards;
+
+    @keyframes pageIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 `
 

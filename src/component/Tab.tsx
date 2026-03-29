@@ -40,7 +40,7 @@ const TabContainer = styled.ul`
     flex-direction: column;
     width: 4.5rem;
     min-height: 250px;
-    right: 0;
+    right: 0.6rem;
     top: 20%;
     transform: translateX(70%);
     z-index: 9999;
