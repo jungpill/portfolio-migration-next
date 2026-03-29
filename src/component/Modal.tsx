@@ -1,7 +1,8 @@
 "use client"
 
-import React,{ useRef} from "react";
+import React,{ useEffect, useRef, useState} from "react";
 import styled from "styled-components";
+import { createPortal } from "react-dom";
 import useOutsideClick from "../hook/UseOutSideClick";
 import close from '../../src/assets/webp/close.webp'
 import "../app/globals.css"
@@ -17,11 +18,20 @@ const Modal = ({
     children,
     setModalChildren
     }:ModalProps) => {
+    const [mounted, setMounted] = useState(false);
 
     const ref = useRef<HTMLDivElement>(null);
     useOutsideClick({ref:ref})
 
-    return(
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
+    return createPortal((
         <ModalContainer visible={children !== null} onClick={() => setModalChildren(null)}>
             <ModalWrapper ref = {ref} onClick={(e) => e.stopPropagation()} visible={children !== null}>
                 <img 
@@ -37,7 +47,7 @@ const Modal = ({
                 {children}
             </ModalWrapper>
         </ModalContainer>
-    )
+    ), document.body)
 }
 
 export default Modal;

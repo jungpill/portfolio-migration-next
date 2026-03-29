@@ -106,12 +106,11 @@ const PoisoningContainer = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    
-
+    position: fixed;
 
      &::-webkit-scrollbar {
-    width: 0px;
-  }
+        width: 0px;
+    }
 `
 
 const Title = styled.div`
