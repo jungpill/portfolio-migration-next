@@ -7,16 +7,30 @@ import GuestBookImage3 from "../../assets/webp/GuestBookImage3.webp";
 import GuestBookImage4 from "../../assets/webp/GuestBookImage4.webp";
 import GuestBookImage5 from "../../assets/webp/GuestBookImage5.webp";
 import CommentField from "../../component/CommentField";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
-import { useGuestBookStore } from "../../store/useGuestBookStore";
 import dayjs from "dayjs";
 import { useAlertStore } from "../../store/useAlertStore";
 
+interface GuestbookEntry {
+  id: number;
+  userId: string;
+  password: string;
+  content: string;
+  date: string; 
+}
+
 const Page = () => {
-  const { guestBookData, setGuestBookData, guestBookLoaded } = useGuestBookStore();
   const [isOpen, setIsOpen] = useState(false);
+  const [guestBookLoaded, setGuestBookLoaded] = useState(false);
+  const [guestBookData, setGuestBookData] = useState<GuestbookEntry[]>([{
+      id: 0,
+      userId: "",
+      password: "",
+      content: "",
+      date: "",
+  }]);
 
   // sessionStorage 대신 state로 관리 (UI 변화 없음)
   const [deleteTargetId, setDeleteTargetId] = useState<number | null>(null);
@@ -53,6 +67,23 @@ const Page = () => {
     setDeleteTargetId(id);
     setIsOpen(true);
   };
+
+  const getGuestBookData = async () => {
+          try{
+              const response = await axiosInstance.get('guestbook')
+              setGuestBookData(response.data)
+          }catch(err){
+              console.error(err)
+          }finally{
+              setGuestBookLoaded(true)
+          }
+      }
+  
+  useEffect(() => {
+      if (!guestBookLoaded) {
+          getGuestBookData();
+      }
+  },[guestBookLoaded])
 
   return (
     <GuestBookContainer

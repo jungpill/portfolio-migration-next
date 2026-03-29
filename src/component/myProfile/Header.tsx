@@ -7,9 +7,6 @@ import { useGuestBookStore } from "../../store/useGuestBookStore";
 
 const MyProfileHeader = () => {
 
-    const setGuestBookData = useGuestBookStore((p) => p.setGuestBookData)
-    const setGuestBookLoaded = useGuestBookStore((p) => p.setGuestBookLoaded)
-    const guestBookLoaded = useGuestBookStore((p) => p.guestBookLoaded)
     const visitor = useGuestBookStore((p) => p.visitor)
     const visitorLoaded = useGuestBookStore((p) => p.visitorLoaded)
     const visitorLoading = useGuestBookStore((p) => p.visitorLoading)
@@ -31,17 +28,6 @@ const MyProfileHeader = () => {
         }
     };
 
-    const getGuestBookData = async () => {
-        try{
-            const response = await axiosInstance.get('guestbook')
-            setGuestBookData(response.data)
-        }catch(err){
-            console.error(err)
-        }finally{
-            setGuestBookLoaded(true)
-        }
-    }
-
     const postVisitor = async() => {
         try{
             await axiosInstance.post('/visitor-ip-log')
@@ -56,12 +42,6 @@ const MyProfileHeader = () => {
             postVisitor();
         }
     },[visitorLoaded, visitorLoading])
-
-    useEffect(() => {
-        if (!guestBookLoaded) {
-            getGuestBookData();
-        }
-    },[guestBookLoaded])
 
     return(
         <HeaderWrapper>
