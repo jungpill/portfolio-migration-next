@@ -10,8 +10,8 @@ import CommentField from "../../component/CommentField";
 import { useEffect, useMemo, useState } from "react";
 import { axiosInstance } from "../../api/axios";
 import InputModal from "../../component/InputModal";
-import dayjs from "dayjs";
 import { useAlertStore } from "../../store/useAlertStore";
+import Card from "./components/Card";
 
 interface GuestbookEntry {
   id: number;
@@ -63,11 +63,6 @@ const Page = () => {
     }
   };
 
-  const openDeleteModal = (id: number) => {
-    setDeleteTargetId(id);
-    setIsOpen(true);
-  };
-
   const getGuestBookData = async () => {
           try{
               const response = await axiosInstance.get('guestbook')
@@ -102,41 +97,18 @@ const Page = () => {
       <GuestWrapper role="list">
         {!guestBookLoaded ? null : guestBookData?.length ? (
           guestBookData.sort((a,b) => a.id - b.id).map((guest, index) => {
-            const titleId = `guest-title-${guest.id}`;
-            const descId = `guest-desc-${guest.id}`;
 
             return (
-              <GuestItem
-                key={guest.id}
-                as="article"
-                role="listitem"
-                aria-labelledby={titleId}
-                aria-describedby={descId}
-                style={{ marginBottom: index === guestBookData.length - 1 ? "2rem" : "0" }}
-              >
-                <Header as="header">
-                  <MarginSpan id={titleId}>NO.{guest.id}</MarginSpan>
-                  <MarginSpan>{guest.userId}</MarginSpan>
-                  <span>({dayjs(guest.date).format("YYYY.MM.DD HH:mm")})</span>
-
-                  {/* span -> button (UI는 똑같이 보이게 스타일) */}
-                  <DeleteButton
-                    type="button"
-                    onClick={() => openDeleteModal(guest.id)}
-                    aria-label={`NO.${guest.id} 방명록 삭제`}
-                  >
-                    삭제
-                  </DeleteButton>
-                </Header>
-
-                <RowWrapper>
-                  <ProfileImage
-                    src={images[index % 5].src}
-                    alt={`${guest.userId} 프로필 이미지`}
-                  />
-                  <Text id={descId}>{guest.content}</Text>
-                </RowWrapper>
-              </GuestItem>
+              <>
+                <Card
+                  key={guest.id}
+                  content={guest.content}
+                  date={guest.date}
+                  id={guest.id}
+                  userId={guest.userId}
+                  image={images[index % images.length]}
+                />
+              </>
             );
           })
         ) : (
@@ -192,73 +164,6 @@ const GuestWrapper = styled.div`
 
   &::-webkit-scrollbar {
     width: 0px;
-  }
-`;
-
-const GuestItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-`;
-
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  background-color: #f2f2f2;
-  width: 85%;
-`;
-
-const RowWrapper = styled.div`
-  display: flex;
-  width: 85%;
-  justify-content: center;
-`;
-
-const ProfileImage = styled.img`
-  width: 130px;
-  height: 130px;
-  margin-top: 2%;
-  border: 1px solid black;
-  border-radius: 20px;
-`;
-
-const Text = styled.div`
-  font-weight: 600;
-  line-height: 2rem;
-  font-size: 1rem;
-  width: 100%;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-  white-space: normal;
-  text-align: justify;
-  margin: 3% 0 0 2%;
-`;
-
-const MarginSpan = styled.span`
-  margin-right: 0.5rem;
-`;
-
-// span처럼 보이는 button
-const DeleteButton = styled.button`
-  margin-left: auto;
-  margin-right: 5px;
-  cursor: pointer;
-
-  background: transparent;
-  border: 0;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-
-  /* 키보드 포커스는 보이게 두는 걸 권장(접근성). */
-  &:focus-visible {
-    outline: 2px solid #007aff;
-    outline-offset: 2px;
-    border-radius: 4px;
   }
 `;
 

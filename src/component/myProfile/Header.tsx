@@ -42,6 +42,7 @@ const MyProfileHeader = () => {
             postVisitor();
         }
     },[visitorLoaded, visitorLoading])
+    
 
     return(
         <HeaderWrapper>

@@ -75,7 +75,7 @@ const CommentFieldContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 3%;
+    bottom: 0;
     width: 80%;
     background-color: #F2F2F2;
     padding: 1rem;
