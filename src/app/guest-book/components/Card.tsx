@@ -2,8 +2,9 @@
 
 import styled from "styled-components";
 import dayjs from "dayjs";
-import { useState } from "react";
 import { StaticImageData } from "next/image";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 interface CardProps {
     content: string;
@@ -11,11 +12,12 @@ interface CardProps {
     id: number;
     userId: string;
     image: StaticImageData;
+    guestBookLoaded: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     setDeleteTargetId: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-const Card = ({ content, date, id, userId,image,setIsOpen, setDeleteTargetId }: CardProps) => {
+const Card = ({ content, date, id, userId,image,guestBookLoaded,setIsOpen, setDeleteTargetId }: CardProps) => {
 
     const titleId = `guest-title-${id}`;
     const descId = `guest-desc-${id}`;
@@ -24,6 +26,25 @@ const Card = ({ content, date, id, userId,image,setIsOpen, setDeleteTargetId }: 
         setDeleteTargetId(id);
         setIsOpen(true);
     };
+
+    if(!guestBookLoaded) {
+        return(
+            <div style={{ display: 'flex',width: "85%", padding: "16px", margin: "0 auto",flexDirection: "column" }}>
+                <Skeleton />
+                <div style={{
+                    display: "flex",
+                    width: "100%",
+                    flexDirection: "row",
+                    gap: "1rem",
+                }}>
+                    <Skeleton height={150} width={180} />
+                    <div style={{ flex: 1 }}>
+                        <Skeleton count={6} />
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <>

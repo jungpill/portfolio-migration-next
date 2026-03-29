@@ -97,7 +97,6 @@ const Page = () => {
       <GuestWrapper role="list">
         {!guestBookLoaded ? null : guestBookData?.length ? (
           guestBookData.sort((a,b) => a.id - b.id).map((guest, index) => {
-
             return (
               <>
                 <Card
@@ -105,6 +104,7 @@ const Page = () => {
                   content={guest.content}
                   date={guest.date}
                   id={guest.id}
+                  guestBookLoaded={guestBookLoaded}
                   userId={guest.userId}
                   image={images[index % images.length]}
                   setIsOpen={setIsOpen}
