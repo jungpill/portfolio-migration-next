@@ -81,6 +81,10 @@ const Label = styled.span`
   color: #87ceeb;
   font-weight: bold;
   margin-right: 10px;
+
+  @media (max-width: 1200px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const EmotionSelector = styled.div`
@@ -107,6 +111,7 @@ const Dropdown = styled(motion.ul)`
   list-style: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   z-index: 10;
+
 `;
 
 const DropdownItem = styled.li`
