@@ -74,7 +74,6 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 90%;
-  margin-right: auto;  
   margin-top: 1rem;
 `;
 

@@ -75,10 +75,10 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
                 <Header/>
                 <MyProfile/>
             </DottedLine>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '20%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '25%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '70%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
-                <Image src = {Ling} alt="Ling" style = {{position: 'absolute', left: '27.8%', top: '75%', width: '3rem', height: '3.7rem',zIndex: 999}}/>
+                <LingImage src={Ling} alt="Ling" style={{ top: '20%',  }} />
+                <LingImage src={Ling} alt="Ling" style={{ top: '25%',  }} />
+                <LingImage src={Ling} alt="Ling" style={{ top: '70%',  }} />
+                <LingImage src={Ling} alt="Ling" style={{ top: '75%',  }} />
                 <RightPanelArea>
                     <BackGroundgray>
                         <ScrollArea>
@@ -110,6 +110,7 @@ const LayoutContainer = styled.div`
     background-color: rgba(193, 193, 193) ;
     align-items: center;
     justify-content: center;
+
 `
 
 const ContentContainer = styled.div`
@@ -125,6 +126,11 @@ const ContentContainer = styled.div`
     height: 97%;
     background-color: skyblue;
     box-sizing: border-box;
+
+    @media (max-width: 1200px) {
+        height: 60%;
+        width: 92%;
+    }
 `
 
 const BackGroundgray = styled.div`
@@ -135,6 +141,10 @@ const BackGroundgray = styled.div`
     background-color: #F2F2F2;
     border: 1px solid black;
     overflow: hidden;
+
+    @media (max-width: 1200px) {
+        height: 90%;
+    }
 `
 
 const RightPanelArea = styled.div`
@@ -142,6 +152,7 @@ const RightPanelArea = styled.div`
     position: relative;
     height: 100%;
     width: 70%;
+    align-items: center;
 `
 
 const ScrollArea = styled.div`
@@ -171,4 +182,21 @@ const DottedLine = styled.div`
     padding: 0.75rem;
     background-color: #F2F2F2;
     flex-direction: column;
+
+    @media (max-width: 1200px) {
+        min-width: 400px;
+        height: 90%;
+    }
+`
+
+const LingImage = styled(Image)`
+    position: absolute;
+    left: 27.8%;
+    width: 3rem;
+    height: 3.7rem;
+    z-index: 999;
+
+    @media (max-width: 1200px) {
+        left: 36.8%;
+    }
 `
