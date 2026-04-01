@@ -67,7 +67,7 @@ const Page = () => {
                 <section aria-labelledby="tech-title">
                     <Title as="h2" id="tech-title" style={{marginBottom: '1rem'}}>기술 스택 및 도구</Title>
                     
-                        <ul style={{display: 'flex', flexWrap: 'wrap',  padding: 0, margin: 0, listStyle: 'none'}}> 
+                        <Skils> 
                             {techList.map((tech) => (
                             <li key={tech.title} style={{margin: 0, padding: 0, listStyle: 'none'}}>
                             <CustomTooltip
@@ -77,7 +77,7 @@ const Page = () => {
                             />
                             </li>
                         ))}
-                        </ul>
+                        </Skils>
                     
                 </section>
 
@@ -85,8 +85,8 @@ const Page = () => {
                 <section aria-labelledby="career-title">
                     <Title as="h3" id="career-title">경력</Title>
                     <div>
-                        <Text as="h4">(주) 투비유니콘</Text>
-                        <p>프론트엔드 개발</p>
+                        <SubTitle as="h4">(주) 투비유니콘</SubTitle>
+                        <Content>프론트엔드 개발</Content>
                         <time dateTime="2025-06">2025.06</time> ~ 재직중
                     </div>
                 </section>
@@ -95,9 +95,9 @@ const Page = () => {
                 <section aria-labelledby="education-title">
                     <Title as="h3" id="education-title">교육</Title>
                     <div>
-                        <Text as="h4">성결대학교</Text>
-                        <p>졸업 | 대학교(학사)</p>
-                        <p>컴퓨터공학과</p>
+                        <SubTitle as="h4">성결대학교</SubTitle>
+                        <Content>졸업 | 대학교(학사)</Content>
+                        <Content>컴퓨터공학과</Content>
                     </div>
                 </section>
 
@@ -153,11 +153,28 @@ const Title = styled.h3`
     font-size: 1.2rem;
     margin: 5% 0 0 0;
     color: #007AFF;
+
+    @media (max-width: 1200px) {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
 `
 
-const Text = styled.p`
+const SubTitle = styled.p`
     font-weight: 600;
     font-size: 1rem;
+
+    @media (max-width: 1200px) {
+        font-size: 1.6rem;
+        margin: 10px 0 5px 0;
+    }
+`
+
+const Content = styled.p`
+    font-size: 0.9rem;
+    @media (max-width: 1200px) {
+        font-size: 1.4rem;
+    }
 `
 
 const Icon = styled.img`
@@ -175,3 +192,18 @@ const Icon = styled.img`
         height: 60px;
     }
 `
+
+const Skils = styled.ul`
+    display: flex;
+    width: 95%;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @media(max-width: 1200px){
+        gap: 0.7rem;
+    }
+`
+

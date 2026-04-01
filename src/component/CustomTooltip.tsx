@@ -28,13 +28,8 @@ export default CustomTooltip;
 const Wrapper = styled.div`
   width: 50px;
   height: 50px;
-  margin-right: 1rem;
   font-size: 0.8rem;
   line-height: 1.5rem;
-  
-  @media(min-width: 1920px){
-    margin-right: 2.5rem;
-  }
 `
 
 const Trigger = styled.div`

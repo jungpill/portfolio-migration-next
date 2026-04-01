@@ -175,6 +175,7 @@ const DottedLine = styled.div`
     display: flex;
     box-sizing: border-box;
     align-items: center;
+    justify-content: center;
     border: 1px solid black;
     border-radius: 30px;
     width: 28%;
@@ -182,6 +183,7 @@ const DottedLine = styled.div`
     padding: 0.75rem;
     background-color: #F2F2F2;
     flex-direction: column;
+    position: relative;
 
     @media (max-width: 1200px) {
         min-width: 400px;

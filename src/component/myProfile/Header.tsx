@@ -62,6 +62,12 @@ const HeaderWrapper = styled.div`
     flex-direction: row;
     justify-content: center; 
     align-items: center;
+    position: absolute;
+    top: 3.5%;
+
+    @media (max-width: 1200px) {
+        top: 3%;
+    }
 `
 
 const VisitorCountWrapper = styled.span`
