@@ -21,9 +21,9 @@ const ImageCardContainer = styled.div`
     width: 100%;
     height: 15rem;
 
-    @media(max-width: ${sizes.laptop}){
-    width: 270px;
-    height: 200px;
+    @media(max-width: 1200px) {
+        width: 200px;
+        height: 200px;
     }
 `
 

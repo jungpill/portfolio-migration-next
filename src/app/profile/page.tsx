@@ -153,28 +153,15 @@ const Title = styled.h3`
     font-size: 1.2rem;
     margin: 5% 0 0 0;
     color: #007AFF;
-
-    @media (max-width: 1200px) {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
 `
 
 const SubTitle = styled.p`
     font-weight: 600;
     font-size: 1rem;
-
-    @media (max-width: 1200px) {
-        font-size: 1.6rem;
-        margin: 10px 0 5px 0;
-    }
 `
 
 const Content = styled.p`
     font-size: 0.9rem;
-    @media (max-width: 1200px) {
-        font-size: 1.4rem;
-    }
 `
 
 const Icon = styled.img`
@@ -201,9 +188,4 @@ const Skils = styled.ul`
     padding: 0;
     margin: 0;
     list-style: none;
-
-    @media(max-width: 1200px){
-        gap: 0.7rem;
-    }
 `
-

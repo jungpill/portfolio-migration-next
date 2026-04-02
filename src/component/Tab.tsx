@@ -49,8 +49,8 @@ const TabContainer = styled.ul`
     list-style: none;
 
     @media(max-width: ${sizes.laptop}){
-    transform: translateX(0);
-    right: 0.5rem;
+        transform: translateX(0);
+        right: -2.5rem;
     }
 `
 

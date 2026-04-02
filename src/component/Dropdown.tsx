@@ -81,10 +81,6 @@ const Label = styled.span`
   color: #87ceeb;
   font-weight: bold;
   margin-right: 10px;
-
-  @media (max-width: 1200px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const EmotionSelector = styled.div`

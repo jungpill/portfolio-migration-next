@@ -129,9 +129,9 @@ const ProjectWrapper = styled.div`
     align-items: center;
     margin-left: 1.5rem;
     margin-top: 1rem;
-    @media(max-width: ${sizes.laptop}){
-    align-items: flex-start;
-    justify-content: flex-start;
+    
+    @media(max-width: 1200px){
+        align-items: center;
     }
 `
 
@@ -142,8 +142,8 @@ const Content = styled.div`
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 
-    @media (max-width: ${sizes.laptop}) {
-        grid-template-columns: 1fr; 
+    @media(max-width: 1200px) {
+        gap: 0;
     }
 `
 
@@ -169,10 +169,6 @@ const Card = styled.button`
     background-color: #f0f0f0;
   }
 
-  @media (max-width: ${sizes.laptop}) {
-    width: 30%;
-    margin-right: 100px;
-  }
 `;
 
 const Title = styled.h2`

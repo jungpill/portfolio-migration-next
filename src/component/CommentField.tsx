@@ -81,6 +81,10 @@ const CommentFieldContainer = styled.div`
     width: 80%;
     background-color: #F2F2F2;
     padding: 1rem;
+
+    @media(max-width: 1200px) {
+        height: 100px;
+    }
 `
 
 const CommentArea = styled.textarea`
@@ -88,6 +92,13 @@ const CommentArea = styled.textarea`
     border-radius: 8px;
     border: none;
     padding: 0.75rem;
+    height: 3rem;
+    box-sizing: border-box;
+
+    @media(max-width: 1200px) {
+        height: 5.5rem;
+        font-size: 1rem;
+    }
 `
 
 const SubmitButton = styled.button`
@@ -102,6 +113,11 @@ const SubmitButton = styled.button`
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    box-sizing: border-box;
+
+    @media(max-width: 1200px) {
+        width: 5rem;
+    }
 `
 
 const RowWrapper = styled.div`

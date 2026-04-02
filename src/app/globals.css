@@ -10,7 +10,8 @@ body {
   font-family: "Gothic A1", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 code {
@@ -259,7 +260,3 @@ code {
     font-size: 16px;
   }
 }
-
-
-
-

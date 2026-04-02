@@ -71,10 +71,10 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             <DownloadButton/>
             <MusicBar/>
             <ContentContainer>
-            <DottedLine>
+            <ProfileLayout>
                 <Header/>
                 <MyProfile/>
-            </DottedLine>
+            </ProfileLayout>
                 <LingImage src={Ling} alt="Ling" style={{ top: '20%',  }} />
                 <LingImage src={Ling} alt="Ling" style={{ top: '25%',  }} />
                 <LingImage src={Ling} alt="Ling" style={{ top: '70%',  }} />
@@ -104,6 +104,7 @@ const LayoutContainer = styled.div`
     position: relative;
     height: 100dvh;
     width: 100vw;
+    min-width: 1200px;
     background-image: linear-gradient(white 1px, transparent 1px), 
                     linear-gradient(90deg, white 1px, transparent 1px);
     background-size: 20px 20px;
@@ -111,6 +112,10 @@ const LayoutContainer = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media(min-width: 780px) and (max-width: 1200px) {
+        height: 100%;
+        width: 100%;
+    }
 `
 
 const ContentContainer = styled.div`
@@ -127,9 +132,8 @@ const ContentContainer = styled.div`
     background-color: skyblue;
     box-sizing: border-box;
 
-    @media (max-width: 1200px) {
+    @media(max-width: 1200px) {
         height: 60%;
-        width: 92%;
     }
 `
 
@@ -141,10 +145,6 @@ const BackGroundgray = styled.div`
     background-color: #F2F2F2;
     border: 1px solid black;
     overflow: hidden;
-
-    @media (max-width: 1200px) {
-        height: 90%;
-    }
 `
 
 const RightPanelArea = styled.div`
@@ -171,7 +171,7 @@ const ScrollArea = styled.div`
     }
 `
 
-const DottedLine = styled.div`
+const ProfileLayout = styled.div`
     display: flex;
     box-sizing: border-box;
     align-items: center;
@@ -185,9 +185,8 @@ const DottedLine = styled.div`
     flex-direction: column;
     position: relative;
 
-    @media (max-width: 1200px) {
+    @media(max-width: 1200px) {
         min-width: 400px;
-        height: 90%;
     }
 `
 
@@ -198,7 +197,7 @@ const LingImage = styled(Image)`
     height: 3.7rem;
     z-index: 999;
 
-    @media (max-width: 1200px) {
-        left: 36.8%;
+    @media(max-width: 1200px) {
+        left: 39.5%;
     }
 `

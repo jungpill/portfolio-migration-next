@@ -64,15 +64,11 @@ const HeaderWrapper = styled.div`
     align-items: center;
     position: absolute;
     top: 3.5%;
-
-    @media (max-width: 1200px) {
-        top: 3%;
-    }
 `
 
 const VisitorCountWrapper = styled.span`
     display: flex;
-    margin: 0;
+    margin: 0 0 5px 0;
 `
 
 const Visitor = styled.p`
@@ -82,8 +78,8 @@ const Visitor = styled.p`
     font-weight: 600;
     font-size: 0.7rem;
 
-    @media (max-width: 1200px) {
-        font-size: 1.1rem;
+    @media(max-width: 1200px) {
+        font-size: 1rem;
     }
 `
 
@@ -91,10 +87,9 @@ const TotalVisitorCount = styled.p`
     color: red;
     margin-left: 5px;
     font-weight: 600;
-    
     font-size: 0.7rem;
 
-    @media (max-width: 1200px) {
-        font-size: 1.1rem;
+    @media(max-width: 1200px) {
+        font-size: 1rem;
     }
 `
