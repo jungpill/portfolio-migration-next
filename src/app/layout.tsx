@@ -1,4 +1,3 @@
-import "./globals.css";
 import styled from "styled-components";
 import type { Metadata } from "next";
 import Ling from '../assets/webp/링.webp'
@@ -66,7 +65,8 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <html lang="ko">
         <body>
-        <StyledComponentsRegistry>
+            이직이 돼 더이상 운영하지 않고 있습니다. 감사합니다.
+        {/* <StyledComponentsRegistry>
         <LayoutContainer>
             <DownloadButton/>
             <MusicBar/>
@@ -90,7 +90,7 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             
             </ContentContainer>
         </LayoutContainer>
-        </StyledComponentsRegistry>
+        </StyledComponentsRegistry> */}
         </body>
         </html>
     )
