@@ -65,7 +65,7 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <html lang="ko">
         <body>
-            이직이 돼 더이상 운영하지 않고 있습니다. 감사합니다.
+            2026-05-03일 이후로 해당 포트폴리오는 사용하지 않기 위해 폐쇄하였습니다.
         {/* <StyledComponentsRegistry>
         <LayoutContainer>
             <DownloadButton/>
