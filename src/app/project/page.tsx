@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
 import Modal from "../../component/Modal";
-import Jaychis from "../../component/project/Jaychis";
+import Aws from "../../component/project/Aws";
 import PortFolilImg from '../../assets/webp/PortFoilo.webp'
 import PortFolio from "../../component/project//PortFolio";
 import { useState } from "react";
@@ -31,7 +31,7 @@ const Page = () => {
             <ProjectWrapper>
                 <Content>
                     <Card 
-                    onClick = {() => {setModalChildren(<Jaychis/>)}} 
+                    onClick = {() => {setModalChildren(<Aws/>)}} 
                     aria-labelledby="aws-title"
                     aria-describedby="aws-period aws-desc"
                     aria-haspopup="dialog"
