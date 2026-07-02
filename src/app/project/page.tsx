@@ -2,18 +2,15 @@
 
 import styled from "styled-components";
 import ImageCard from "../../component/ImageCard";
-import JaychisImg from '../../assets/webp/JaychisImg.webp';
 import Modal from "../../component/Modal";
 import Jaychis from "../../component/project/Jaychis";
-import 싹둑싹둑Img from '../../assets/webp/싹둑싹둑.webp'
 import PortFolilImg from '../../assets/webp/PortFoilo.webp'
-import Cut from "../../component/project//Cut";
 import PortFolio from "../../component/project//PortFolio";
 import { useState } from "react";
 import Poisoning from "../../component/project/BugTrace";
-import { sizes } from "../../styles/BreakPoints";
 import React from "react";
-import BugTrace from '../../assets/BugTrace.png'
+import AwsThumbnail from '../../assets/AWS_thumbnail.png'
+import GpuThumbnail from '../../assets/GPU_thumbnail.png'
 
 const Page = () => {
     const [modalChildren, setModalChildren] = useState<React.ReactNode | null>(null)
@@ -35,35 +32,32 @@ const Page = () => {
                 <Content>
                     <Card 
                     onClick = {() => {setModalChildren(<Jaychis/>)}} 
-                    aria-labelledby="jaychis-title"
-                    aria-describedby="jaychis-period jaychis-desc"
+                    aria-labelledby="aws-title"
+                    aria-describedby="aws-period aws-desc"
                     aria-haspopup="dialog"
                     aria-controls="project-modal"
                     >
                         <ImageCard
-                        img={JaychisImg.src}
-                        title="Jaychis 이미지"
+                        img={AwsThumbnail.src}
+                        title="AWS 이미지"
                         />
-                        <Title id="jaychis-title">Jaychis</Title>
-                        <Text>2024.09 ~ 2025.01</Text>
-                        <Text>가장 많이 검색된 주제, 가장 많은 댓글이 달린 게시글 등을 보여주는 백오피스 커뮤니티</Text>
+                        <Title id="aws-title">AWS 작업 요약</Title>
+                        <Text>AWS 비용 최적화 작업 수행</Text>
                     </Card>
 
                     <Card 
                     onClick = {() => {setModalChildren(<Poisoning/>)}} 
-                    aria-labelledby="poisoning-title"
-                    aria-describedby="poisoning-period poisoning-desc"
+                    aria-labelledby="gpu-title"
+                    aria-describedby="gpu-period gpu-desc"
                     aria-haspopup="dialog"
                     aria-controls="project-modal"
                     >
                         <ImageCard
-                        img={BugTrace.src}
-                        title="BugTrace 이미지"
+                        img={GpuThumbnail.src}
+                        title="GPU 이미지"
                         />
-                        <Title id="poisoning-title">BugTrace</Title>
-                        <Text>2026.01 ~ 2026.02</Text>
-                        <Text>사용자의 이벤트를 수집하는 프로그램으로
-                        에러별로 사용자의 행동을 보여줘 재현이 어려운 에러의 재현을 돕습니다.</Text>
+                        <Title id="gpu-title">GPU 작업 요약</Title>
+                        <Text>GPU 서버 관리 작업 수행</Text>
                     </Card>
 
                     <Card 

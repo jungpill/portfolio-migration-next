@@ -3,6 +3,7 @@ import call from '../../assets/webp/icons8-전화-30.webp'
 import email from '../../assets/webp/icons8-gmail-logo-30.webp'
 import home from '../../assets/webp/icons8-집-50.webp'
 import github from '../../assets/webp/icons8-github의-30.webp'
+import { CgProfile } from "react-icons/cg";
 
 const Info = () => {
 
@@ -13,6 +14,7 @@ const Info = () => {
                 <InfoLi><StyledImage src = {call.src} alt = '전화 아이콘'/> 010-5628-7623</InfoLi>
                 <InfoLi><StyledImage src = {email.src} alt = '이메일 아이콘'/> wjdvlf99@naver.com</InfoLi>
                 <InfoLi><StyledImage src = {home.src} alt = '집 아이콘'/> 경기도 안양시 석수동</InfoLi>
+                <InfoLi><CgProfile style={{width: '20px', height: '20px', marginRight: '1%'}}/> 1999.06.18 (만 27세)</InfoLi>
                 <a href = 'https://github.com/jungpill' target="_blank" rel="noreferrer"><InfoLi><StyledImage src = {github.src} alt = '깃허브 아이콘'/> https://github.com/jungpill</InfoLi></a>
             </InfoUl>
         </InfoContainer>

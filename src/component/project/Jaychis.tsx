@@ -6,68 +6,33 @@ import Styled from '../../assets/webp/styledcomponents.webp'
 import Antd from '../../assets/webp/AntDesign.webp'
 import CustomTooltip from "../../component/CustomTooltip";
 import TypeScript from '../../assets/webp/TypeScript.webp'
+import AwsThumbnail from '../../assets/AWS_thumbnail.png'
+import Podman from '../../assets/icon_podman.png'
 
 const Jaychis = () => {
 
     return(
         <JaychisContainer>
-            <img src = {제이치스.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = 'Jaychis 프로젝트 이미지'/>
+            <img src = {AwsThumbnail.src} width='100%' height='50%' style = {{marginTop: '1rem'}} alt = 'AWS 이미지'/>
             <Title>
-                프로젝트명
+                작업 내용 
             </Title>
             <Content>
-                Jaychis 
+                AWS비용 최적화 작업 수행
             </Content>
-            <Wrapper>
-                <Wrapper>
-                    <Column>
-                        <Title>
-                            개발인원
-                        </Title>
-                        <Content>
-                            3명
-                        </Content>
-                    </Column>
 
-                    <Column>
-                        <Title>
-                            개발기간
-                        </Title>
-                        <Content>
-                            24.09 ~ 25.01
-                        </Content>
-                    </Column>
-
-                    <Column>
-                        <Title>
-                            깃허브 링크
-                        </Title>
-                        <Content >
-                            <a href = 'https://github.com/jaychis/nest-front' target='_blank' rel="noreferrer">
-                            https://github.com/jaychis/nest-front
-                            </a>
-                        </Content>
-                    </Column>
-                </Wrapper>
-            </Wrapper>
             <Title>
                 기술 스택
             </Title>
             <Wrapper>
             <Content>
-                <CustomTooltip title="React" position="bottom"><Icon src = {React.src} alt = 'React 아이콘'/></CustomTooltip>
+                <CustomTooltip title="Podman" position="bottom"><Icon src = {Podman.src} alt = 'Podman 아이콘'/></CustomTooltip>
             </Content>
             <Content>
                 <CustomTooltip title="TypeScript" position="bottom"><Icon src = {TypeScript.src} alt = 'TypeScript 아이콘'/></CustomTooltip>
             </Content>
             <Content>
                 <CustomTooltip title="Redux" position="bottom"><Icon src = {Redux.src} alt = 'Redux 아이콘'/></CustomTooltip>
-            </Content>
-            <Content>
-                <CustomTooltip title="Antd" position="bottom"><Icon src = {Antd.src} alt = 'Ant Design 아이콘'/></CustomTooltip>
-            </Content>
-            <Content>
-                <CustomTooltip title="Styled-Component" position="bottom"><Icon src = {Styled.src} alt = 'Styled Components 아이콘'/></CustomTooltip>
             </Content>
             </Wrapper>
             <Hr/>
