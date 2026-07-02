@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { createPortal } from "react-dom";
 import useOutsideClick from "../hook/UseOutSideClick";
 import close from '../../src/assets/webp/close.webp'
-import "../app/globals.css"
+
 
 type ModalProps = {
   children: React.ReactNode | null;

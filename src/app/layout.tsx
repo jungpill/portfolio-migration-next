@@ -1,3 +1,4 @@
+import './globals.css'
 import styled from "styled-components";
 import type { Metadata } from "next";
 import Ling from '../assets/webp/링.webp'
