@@ -16,7 +16,10 @@ const MusicBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasShownModal, setHasShownModal] = useState(false);
   const [index, setIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const advancingRef = useRef(false);
+  const activeRef = useRef(active);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const current = tracks[index];
@@ -34,7 +37,10 @@ const MusicBar = () => {
         setActive(false);
         break;
       case "square":
-        if (audioRef.current) audioRef.current.currentTime = 0;
+        if (audioRef.current) {
+          audioRef.current.currentTime = 0;
+          setCurrentTime(0);
+        }
         break;
       case "next":
         goNext();
@@ -56,16 +62,64 @@ const MusicBar = () => {
   };
 
   useEffect(() => {
+    activeRef.current = active;
+  }, [active]);
+
+  useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.currentTime = 0; // 인덱스 변경 시 초기화
     if (active) {
       audio.play().catch(() => setActive(false));
     } else {
       audio.pause();
     }
-  }, [active, index]);
+  }, [active]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.currentTime = 0;
+    setCurrentTime(0);
+    setDuration(0);
+
+    if (activeRef.current) {
+      audio.play().catch(() => setActive(false));
+    }
+  }, [index]);
+
+  const handleTimeUpdate = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    setCurrentTime(audio.currentTime);
+  };
+
+  const handleLoadedMetadata = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const nextTime = Number(e.target.value);
+    audio.currentTime = nextTime;
+    setCurrentTime(nextTime);
+  };
+
+  const formatTime = (seconds: number) => {
+    if (!Number.isFinite(seconds)) return "0:00";
+
+    const minutes = Math.floor(seconds / 60);
+    const restSeconds = Math.floor(seconds % 60).toString().padStart(2, "0");
+
+    return `${minutes}:${restSeconds}`;
+  };
 
   const goNext = useCallback(() => {
     if (advancingRef.current) return; // 중복 방지
@@ -93,6 +147,20 @@ const MusicBar = () => {
         {current.artist} - {current.title}
       </TitleBox>
 
+      <SeekBox>
+        <TimeText>{formatTime(currentTime)}</TimeText>
+        <SeekBar
+          type="range"
+          min="0"
+          max={duration || 0}
+          step="1"
+          value={Math.min(currentTime, duration || 0)}
+          onChange={handleSeek}
+          aria-label="노래 재생 위치"
+        />
+        <TimeText>{formatTime(duration)}</TimeText>
+      </SeekBox>
+
       <IconBox onClick={handleRemote}>
         <Icon
           data-type={!active ? "play" : "stop"}
@@ -111,7 +179,13 @@ const MusicBar = () => {
         <Icon data-type="next" src={next.src} alt="다음" />
       </IconBox>
 
-      <audio ref={audioRef} src={encodeURI(current.src)} onEnded={goNext} />
+      <audio
+        ref={audioRef}
+        src={encodeURI(current.src)}
+        onEnded={goNext}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+      />
     </MusicBarContainer>
   );
 };
@@ -124,8 +198,8 @@ const MusicBarContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 8rem;
-  height: 4rem;
+  width: 9.5rem;
+  height: 5.25rem;
   background-color: darkgray;
   right: 0.8%;
   top: 10%;
@@ -135,7 +209,7 @@ const MusicBarContainer = styled(motion.div)`
 
   @media (max-width: ${sizes.laptop}) {
     right: 0;
-    width: 6rem;
+    width: 8rem;
     font-size: 8px;
   }
 `;
@@ -144,12 +218,42 @@ const TitleBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50%;
+  height: 38%;
   width: 90%;
   border: 1px solid black;
   background-color: white;
   border-radius: 4px;
   font-weight: 600;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+const SeekBox = styled.div`
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.7rem 1fr 1.7rem;
+  gap: 0.2rem;
+  width: 90%;
+  margin-top: 0.25rem;
+`;
+
+const TimeText = styled.span`
+  color: #111;
+  font-size: 0.55rem;
+  line-height: 1;
+  text-align: center;
+  font-weight: 600;
+`;
+
+const SeekBar = styled.input`
+  width: 100%;
+  height: 0.35rem;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #222;
 `;
 
 const IconBox = styled.div`
