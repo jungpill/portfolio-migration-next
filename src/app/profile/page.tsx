@@ -1,21 +1,13 @@
 import styled from "styled-components";
 import type { Metadata } from "next";
-import JavaScript from '../../assets/webp/JavaSCript.webp'
-import TypeScript from '../../assets/webp/TypeScript.webp'
-import React from '../../assets/webp/React.webp'
-import Redux from '../../assets/webp/Redux.webp'
-import Styled from '../../assets/webp/styledcomponents.webp'
-import ReactQuery from '../../assets/webp/react-query.webp'
 import GitHub from '../../assets/webp/icons8-github의-30.webp'
-import Zustand from '../../assets/webp/Zustand.webp'
-import AntDesign from '../../assets/webp/AntDesign.webp'
 import Jira from '../../assets/webp/Jira.webp'
 import Confluence from '../../assets/webp/Confluence.webp'
-import chart_js from '../../assets/webp/chart.js.webp'
 import Aws from '../../assets/webp/aws.webp'
-import Gcp from '../../assets/webp/gcp.webp'
 import CustomTooltip from "../../component/CustomTooltip";
-import Next from '../../assets/webp/icon_next.webp'
+import Docker from '../../assets/icon_docker.png'
+import Grafana from '../../assets/icon_grafana.png'
+import Nginx from '../../assets/icon_nginx.png'
 
 export const metadata: Metadata = {
     title: "프로필",
@@ -39,20 +31,24 @@ export const metadata: Metadata = {
 const Page = () => {
 
     const techList = [
-        { title: "React", icon: React },
-        { title: "Next.js", icon: Next},
-        { title: "JavaScript", icon: JavaScript },
-        { title: "TypeScript", icon: TypeScript },
-        { title: "Redux", icon: Redux },
-        { title: "Zustand", icon: Zustand },
-        { title: "React Query", icon: ReactQuery },
-        { title: "Styled Components", icon: Styled },
-        { title: "chart.js", icon: chart_js },
+        // { title: "React", icon: React },
+        // { title: "Next.js", icon: Next},
+        // { title: "JavaScript", icon: JavaScript },
+        // { title: "TypeScript", icon: TypeScript },
+        // { title: "Redux", icon: Redux },
+        // { title: "Zustand", icon: Zustand },
+        // { title: "React Query", icon: ReactQuery },
+        // { title: "Styled Components", icon: Styled },
+        // { title: "chart.js", icon: chart_js },
+        // { title: 'Gcp', icon: Gcp},
+        { title: 'Aws', icon: Aws},
+        { title: "Docker", icon: Docker},
+        { title: "Grafana", icon: Grafana},
+        { title: "Nginx", icon: Nginx},
         { title: "Confluence", icon: Confluence },
         { title: "Jira", icon: Jira },
         { title: "GitHub", icon: GitHub },
-        { title: 'Aws', icon: Aws},
-        { title: 'Gcp', icon: Gcp}
+        
     ];
 
     return(
@@ -86,8 +82,8 @@ const Page = () => {
                     <Title as="h3" id="career-title">경력</Title>
                     <div>
                         <SubTitle as="h4">(주) 투비유니콘</SubTitle>
-                        <Content>프론트엔드 개발</Content>
-                        <time dateTime="2025-06">2025.06</time> ~ 재직중
+                        <Content>서버관리 및 프론트엔드 개발</Content>
+                        <time dateTime="2025-06">2025.06</time> ~ 2026.06
                     </div>
                 </section>
                 
