@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import test from "../assets/main2.png";
 import Image from 'next/image';
 import gitImage from "../assets/test.gif";
 
@@ -11,7 +10,7 @@ export const metadata = {
 
 const Page = () => {
 
-    const text = "유저의 입장에서 생각하며 최선의 방향을 고민하는 개발자 이정필입니다.";
+    const text = "문제를 직접 찾고 해결하는 인프라 엔지니어 이정필 입니다";
 
     return(
         <BodyContainer>
