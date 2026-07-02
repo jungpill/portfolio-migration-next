@@ -64,6 +64,10 @@ const HeaderWrapper = styled.div`
     align-items: center;
     position: absolute;
     top: 3.5%;
+
+    @media(max-width: 1399px) {
+        top: 1%;
+    }
 `
 
 const VisitorCountWrapper = styled.span`

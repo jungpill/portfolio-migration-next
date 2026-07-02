@@ -15,6 +15,10 @@ export default ProfileImage
 const ProfileImageWrapper = styled.div`
     width: 100%;
     height: 60%;
+
+     @media(max-width: 1200px) {
+        height: 50%;
+    }
 `
 
 const StyledImage = styled.img`
@@ -22,4 +26,5 @@ const StyledImage = styled.img`
     height: 100%;
     border-radius: 20px;
     object-fit: cover;
+
 `

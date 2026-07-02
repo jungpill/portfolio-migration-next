@@ -72,7 +72,6 @@ const Page = () => {
                         title="이정필의 싸이월드 포트폴리오 이미지"
                         />
                         <Title id="portfolio-title">싸이월드 포트폴리오</Title>
-                        <Text>2025.04 ~ 2025.04</Text>
                         <Text>포트폴리오를 웹으로 구현 </Text>
                     </Card>
 

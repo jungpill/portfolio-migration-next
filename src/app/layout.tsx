@@ -112,10 +112,6 @@ const LayoutContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media(min-width: 780px) and (max-width: 1200px) {
-        height: 100%;
-        width: 100%;
-    }
 `
 
 const ContentContainer = styled.div`
@@ -132,8 +128,8 @@ const ContentContainer = styled.div`
     background-color: skyblue;
     box-sizing: border-box;
 
-    @media(max-width: 1200px) {
-        height: 60%;
+    @media(max-width: 1399px) {
+        height: 90%;
     }
 `
 
@@ -153,6 +149,11 @@ const RightPanelArea = styled.div`
     height: 100%;
     width: 70%;
     align-items: center;
+
+    @media(max-width: 1390px) {
+        width: 100%;   
+        
+    }
 `
 
 const ScrollArea = styled.div`
@@ -185,7 +186,7 @@ const ProfileLayout = styled.div`
     flex-direction: column;
     position: relative;
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1399px) {
         min-width: 400px;
     }
 `
