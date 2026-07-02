@@ -24,6 +24,17 @@ const MusicBar = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const current = tracks[index];
 
+  const syncDuration = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const nextDuration = audio.duration;
+
+    if (Number.isFinite(nextDuration) && nextDuration > 0) {
+      setDuration(nextDuration);
+    }
+  }, []);
+
   const handleRemote = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
     const type = target.getAttribute("data-type");
@@ -80,9 +91,9 @@ const MusicBar = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.currentTime = 0;
     setCurrentTime(0);
     setDuration(0);
+    audio.load();
 
     if (activeRef.current) {
       audio.play().catch(() => setActive(false));
@@ -94,20 +105,20 @@ const MusicBar = () => {
     if (!audio) return;
 
     setCurrentTime(audio.currentTime);
+    syncDuration();
   };
 
   const handleLoadedMetadata = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
+    syncDuration();
   };
 
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement> | React.FormEvent<HTMLInputElement>) => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const nextTime = Number(e.target.value);
+    syncDuration();
+
+    const nextTime = Number(e.currentTarget.value);
     audio.currentTime = nextTime;
     setCurrentTime(nextTime);
   };
@@ -155,6 +166,7 @@ const MusicBar = () => {
           max={duration || 0}
           step="1"
           value={Math.min(currentTime, duration || 0)}
+          onInput={handleSeek}
           onChange={handleSeek}
           aria-label="노래 재생 위치"
         />
@@ -185,6 +197,9 @@ const MusicBar = () => {
         onEnded={goNext}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
+        onDurationChange={handleLoadedMetadata}
+        onCanPlay={handleLoadedMetadata}
+        preload="metadata"
       />
     </MusicBarContainer>
   );
