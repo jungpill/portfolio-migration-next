@@ -43,7 +43,7 @@ const TabContainer = styled.ul`
     right: 0.6rem;
     top: 20%;
     transform: translateX(70%);
-    z-index: 9999;
+    z-index: 100;
     margin: 0;
     padding: 0;
     list-style: none;
