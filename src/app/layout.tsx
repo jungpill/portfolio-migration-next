@@ -66,8 +66,8 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
     return(
         <html lang="ko">
         <body>
-      
-         <StyledComponentsRegistry>
+        26년 8월 26일 이후로 사용되지 않아 폐쇄 되었습니다.
+         {/* <StyledComponentsRegistry>
         <LayoutContainer>
             <DownloadButton/>
             <MusicBar/>
@@ -91,7 +91,7 @@ const Layout = ({ children }: { readonly children: React.ReactNode }) => {
             
             </ContentContainer>
         </LayoutContainer>
-        </StyledComponentsRegistry>
+        </StyledComponentsRegistry> */}
         </body>
         </html>
     )
